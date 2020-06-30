@@ -102,7 +102,7 @@ section {
 }
 
 .right {
-    background-image: url("/frontend/resources/img/landingpage.png");
+    background-image: url("/_library//resources/img/landingpage.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -144,7 +144,7 @@ section {
 }
 
 .about {
-    background-image: url("/frontend/resources/img/about.png");
+    background-image: url("/_library//resources/img/about.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -412,8 +412,8 @@ footer ul li a ion-icon {
         width: 100%;
     }
     #home .container {
-        background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/frontend/resources/img/mob-bg.jpg');
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/frontend/resources/img/mob-bg.jpg');
+        background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/_library//resources/img/mob-bg.jpg');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/_library//resources/img/mob-bg.jpg');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
