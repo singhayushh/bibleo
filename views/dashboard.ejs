@@ -7,7 +7,7 @@
     <title>Bibleo | Dashboard</title>
     <meta name="description" content="Bibleo is an online room for reading. Featuring an online book shelf to store and showcase your e-books, Bibleo offers a pleasant and serene environment for you to read books. Sign up and become a bibleophile right now!">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/_library/frontend/resources/style.css">
+    <link rel="stylesheet" href="/resources/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
 </head>
 
@@ -18,7 +18,9 @@
             <div class="profile">
                 <div id="time"></div>
                 <img src="resources/img/cover-sm.png" height="75px" alt="">
-                <h4>Ayush Singh</h4>
+                <h4>
+                    <%= username %>
+                </h4>
             </div>
             <ul class="contents">
                 <li>
@@ -62,7 +64,7 @@
                     <span>“You know you've read a good book when you turn the last page and feel a little as if you have lost a friend.”</span><br><br>
                     <div class="auth">~ Paul Sweeney</div>
                 </div>
-                <img src="/_library/frontend/resources/img/book2.svg" alt="">
+                <img src="/resources/img/book2.svg" alt="">
             </div>
 
             <div class="shelf">
@@ -93,7 +95,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
-    <script src="/_library/frontend/resources/script.js"></script>
+    <script src="/resources/script.js"></script>
 </body>
 
 </html>
