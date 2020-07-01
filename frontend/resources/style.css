@@ -13,8 +13,8 @@ body {
     font-size: 18px;
     font-family: 'Roboto', consolas, sans-serif;
     /*
-        Base: #b6d4ec;
-    */
+    Base: #b6d4ec;
+*/
 }
 
 ul li,
@@ -102,7 +102,7 @@ section {
 }
 
 .right {
-    background-image: url("/_library/frontend/resources/img/landingpage.png");
+    background-image: url("/resources/img/landingpage.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -144,7 +144,7 @@ section {
 }
 
 .about {
-    background-image: url("/_library/frontend/resources/img/about.png");
+    background-image: url("/resources/img/about.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -309,6 +309,20 @@ footer {
     padding: 20px 40px;
 }
 
+@media only screen and (min-width: 1243px) {
+    footer .foot-text,
+    footer a,
+    footer .foot-icons {
+        flex: 0 0 30%;
+    }
+    footer a {
+        text-align: center;
+    }
+    footer .foot-icons {
+        text-align: right;
+    }
+}
+
 .foot-text a {
     color: #000;
     font-weight: 600;
@@ -326,6 +340,11 @@ footer ul li a ion-icon {
 
 .hidden {
     display: none;
+}
+
+.login footer {
+    position: fixed;
+    bottom: 0;
 }
 
 @media only screen and (max-width: 1243px) {
@@ -400,6 +419,9 @@ footer ul li a ion-icon {
 }
 
 @media only screen and (max-width: 768px) {
+    #home {
+        min-height: 700px;
+    }
     nav {
         height: 75px;
     }
@@ -412,8 +434,8 @@ footer ul li a ion-icon {
         width: 100%;
     }
     #home .container {
-        background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/_library/frontend/resources/img/mob-bg.jpg');
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/_library/frontend/resources/img/mob-bg.jpg');
+        background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/resources/img/mob-bg.jpg');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/resources/img/mob-bg.jpg');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -477,8 +499,58 @@ footer ul li a ion-icon {
     }
 }
 
-@media only screen and (max-width: 768px) {
-    #home {
-        min-height: 700px;
+@media only screen and (max-width: 500px) {
+    form {
+        height: 300px;
+        width: 300px !important;
     }
+}
+
+
+/* --------------------- Login Page --------------------- */
+
+#login h2 {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#login span {
+    font-size: 16px;
+}
+
+form {
+    height: 400px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group,
+form input {
+    width: 75%;
+    height: 50px;
+    margin-bottom: 25px;
+    border: none;
+    background-color: #f6f8fb;
+    border-radius: 22px;
+    padding: 0px 30px;
+}
+
+form input {
+    width: 100%;
+    padding: 0;
+}
+
+form button {
+    margin-top: 40px;
+    padding: 10px 40px;
+    border-radius: 10px;
+    border: 1px solid #f95700;
+    background-color: #f95700;
+    color: #f6f8fb;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    font-weight: 300;
 }

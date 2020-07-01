@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bibleo | Login</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/resources/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="login">
+
+    <nav class="nav">
+        <div class="logo"><img src="/resources/img/bibleo-svg.png" alt="Bibleo Logo" height="100%"></div>
+        <div class="legend">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#overview">Overview</a></li>
+                <li class="hero"><a href="/register">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="login">
+        <div class="container right"></div>
+        <div class="container">
+            <h2>Sign in</h2>
+            <form action="/user/login" method="POST">
+                <!--<%= typeof name != 'undefined' ? name : '' %>-->
+                <div class="form-group">
+                    <label for="username"></label>
+                    <input type="name" id="username" name="username" class="form-control" placeholder="Enter username" value="" />
+                </div>
+                <!--<%= typeof password != 'undefined' ? password : '' %>-->
+                <div class="form-group">
+                    <label for="password"></label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" value="" />
+                </div>
+                <button type="submit" class="btn ">Sign in</button>
+
+            </form>
+            <span>Not a bibleophile yet? <a href="/register">Sign up</a> here!</span>
+        </div>
+    </section>
+
+    <footer>
+        <div class="foot-text"><a href="https://www.github.com/singhayushh.github.io" target="_blank">ayushSingh ©</a> —Kalyani / Kolkata, India.</div>
+        <a href="https://www.github.com/singhayushh.github.io" target="_blank"><img src="/resources/img/cover-sm.png" height="50px" alt=""></a>
+        <div class="foot-icons">
+            <ul>
+                <li>
+                    <a href="mailto:coding.ayush@gmail.com" target="_blank">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/faulty_strats/" target="_blank">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/deathnaught/" target="_blank">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.github.com/singhayushh" target="_blank">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="/resources/script.js"></script>
+</body>
+
+</html>
