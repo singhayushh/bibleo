@@ -1,7 +1,7 @@
 {
-    "name": "library",
+    "name": "bibleo",
     "version": "1.0.0",
-    "description": "online library",
+    "description": "Personalised Online Library",
     "main": "server.js",
     "dependencies": {
         "cookie-parser": "^1.4.5",
@@ -17,7 +17,8 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon server.js"
+        "start": "nodemon server.js",
+        "run": "node server.js"
     },
     "repository": {
         "type": "git",
