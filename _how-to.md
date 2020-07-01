@@ -5,7 +5,7 @@
 3. After the above step, you'll see a newly created directory /node_modules. You are now ready to run the web-app on your device.
    For that, you need to have connection access to the database. Contact me at [coding.ayush@gmail.com](mailto:coding.ayush@gmail.com) for credentials.
 4. After completing the above steps, run `npm start` in the terminal window. Wait for a few minutes until you see the message `Server started successfully on 127.0.0.1:3000`
-5. Open your web browser and navigate to `127.0.0.1:3000` and fall in love with the website ❤️.
+5. Open your web browser and navigate to `127.0.0.1:3000` and fall in love with the website ❤️
 
 <br>
 
