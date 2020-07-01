@@ -501,9 +501,19 @@ footer ul li a ion-icon {
 }
 
 @media only screen and (max-width: 500px) {
+    #login .container {
+        background: url('/_library/frontend/resources/img/top-frame.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
     form {
-        height: 300px;
+        height: max-content !important;
+        margin: 40px 30px 30px 30px;
         width: 300px !important;
+    }
+    form button {
+        margin-top: 20px !important;
     }
 }
 
