@@ -1,11 +1,11 @@
 A personal space online for storing and reading books!
 
-- Project Insight:
+#### Project Insight:
   This project is focused on building an online personal bookshelf for the community to make reading a bit more elegant.
   I am using the free mongo cluster, so it isn't possible to store entire books online. Therefore, the users will have to
   upload the files as pdf in drive / dropbox and link them in.
   
-- Project Development:
+#### Project Development:
   - Backend: [Node, Express, Mongo DB]
   - Frontend: [EJS, CSS, JS]
   - Project Duration: 30.06.2020 - 
