@@ -16,7 +16,7 @@ A personal space online for storing and reading books!
  #### Dashboard
  
  <kbd>
- <img src="https://github.com/singhayushh/_library/blob/master/frontend/resources/img/dashboard-screen.png" width="1500px">
+ <img src="https://github.com/singhayushh/_library/blob/master/views/resources/img/dashboard-screen.png" width="1500px">
  </kbd>
  
   Acknowledgement: [Vadim Drut's Shot](https://dribbble.com/shots/10980760-Book-Library-page)
@@ -24,19 +24,19 @@ A personal space online for storing and reading books!
  ### Home
  
  <kbd>
- <img src="https://github.com/singhayushh/_library/blob/master/frontend/resources/img/home-screen.png" width="1500px">
+ <img src="https://github.com/singhayushh/_library/blob/master/views/resources/img/home-screen.png" width="1500px">
  </kbd>
  
  ### About
  
  <kbd>
- <img src="https://github.com/singhayushh/_library/blob/master/frontend/resources/img/about-screen.png" width="1500px">
+ <img src="https://github.com/singhayushh/_library/blob/master/views/resources/img/about-screen.png" width="1500px">
  </kbd>
  
  ### Login
  
  <kbd>
- <img src="https://github.com/singhayushh/_library/blob/master/frontend/resources/img/login-screen.png" width="1500px">
+ <img src="https://github.com/singhayushh/_library/blob/master/views/resources/img/login-screen.png" width="1500px">
  </kbd>
 
  
