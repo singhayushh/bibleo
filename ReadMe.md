@@ -11,20 +11,33 @@ A personal space online for storing and reading books!
   - Project Duration: 30.06.2020 - 
   - Acknowledgement: Traversy Media, Dev Ed from YT
   
- - Screen Shots:
+ ## Screen Shots:
  
- Dashboard<br>
+ #### Dashboard
+ 
+ <kbd>
  <img src="https://github.com/singhayushh/_library/blob/master/frontend/resources/img/dashboard-screen.png" width="1500px">
- Acknowledgement: [Vadim Drut's Shot](https://dribbble.com/shots/10980760-Book-Library-page)
+ </kbd>
  
- Home<br>
+  Acknowledgement: [Vadim Drut's Shot](https://dribbble.com/shots/10980760-Book-Library-page)
+ 
+ ### Home
+ 
+ <kbd>
  <img src="https://github.com/singhayushh/_library/blob/master/frontend/resources/img/home-screen.png" width="1500px">
+ </kbd>
  
- About<br>
+ ### About
+ 
+ <kbd>
  <img src="https://github.com/singhayushh/_library/blob/master/frontend/resources/img/about-screen.png" width="1500px">
+ </kbd>
  
- Login<br>
+ ### Login
+ 
+ <kbd>
  <img src="https://github.com/singhayushh/_library/blob/master/frontend/resources/img/login-screen.png" width="1500px">
+ </kbd>
 
  
  
