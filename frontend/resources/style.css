@@ -163,6 +163,13 @@ section {
     margin: 30px auto;
 }
 
+h1 {
+    color: #434f71;
+    font-size: 32px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
 h2 {
     color: #434f71;
     font-size: 28px;
@@ -554,6 +561,11 @@ form input {
     padding: 0;
 }
 
+input:focus,
+button:focus {
+    outline: none;
+}
+
 form button {
     margin-top: 40px;
     padding: 10px 40px;
@@ -564,4 +576,186 @@ form button {
     font-size: 18px;
     letter-spacing: 1.5px;
     font-weight: 300;
+}
+
+
+/* -------------------- Dashboard UI -------------------- */
+
+.dashboard {
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.side-nav {
+    height: 100%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0px 30px;
+    float: left;
+    background-color: #f6f8fb;
+}
+
+.side-nav h4 {
+    margin: 10px auto;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+.profile,
+.contents,
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.profile {
+    justify-content: space-between;
+}
+
+#time {
+    width: max-content;
+    height: 30px;
+    color: #434f71;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 11px #d1d3d5, -5px -5px 11px #ffffff;
+}
+
+.profile {
+    height: 25%;
+    min-height: 200px;
+}
+
+.profile img {
+    border-radius: 50%;
+}
+
+.contents {
+    height: 40%;
+    border-top: 1px solid #6575a43f;
+}
+
+.side-nav ul li {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border-radius: 22px;
+    font-size: 16px;
+    color: #434f71b9;
+}
+
+.contents li:hover {
+    -webkit-box-shadow: 0px 8px 17px -6px rgba(101, 117, 164, 1);
+    -moz-box-shadow: 0px 8px 17px -6px rgba(101, 117, 164, 1);
+    box-shadow: 0px 8px 17px -6px rgba(101, 117, 164, 1);
+    transition-delay: 30ms;
+}
+
+.side-nav ul li ion-icon {
+    font-size: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.settings {
+    height: 25%;
+}
+
+.settings ul {
+    width: 100%;
+}
+
+.active {
+    background-color: #6575a4;
+    color: #fff !important;
+}
+
+.board {
+    height: max-content;
+    width: calc(100% - 300px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background-color: #fff;
+}
+
+.preview {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 45vh;
+    width: 90%;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #f6f8fb;
+    background-image: url('img/card-1.png');
+    background-size: cover;
+    border-radius: 22px;
+}
+
+.preview img {
+    height: 90%;
+}
+
+.shelf {
+    height: max-content;
+    width: 90%;
+    min-height: 250px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.preview .text-box span {
+    font-size: 36px;
+}
+
+.book {
+    height: 296px;
+    width: 220px;
+    border: 1px solid #000;
+    margin-right: 50px;
+    margin-top: 50px;
+    display: inline-block;
+    float: left;
+}
+
+.b1 {
+    background-image: url('img/book-cover1.jpg');
+    background-size: cover;
+}
+
+.b2 {
+    background-image: url('img/book-cover2.jpg');
+    background-size: cover;
+}
+
+.b3 {
+    background-image: url('img/book-cover3.jpg');
+    background-size: contain;
+}
+
+.b4 {
+    background-image: url('img/book-cover4.jpg');
+    background-size: cover;
+}
+
+.b5 {
+    background-image: url('img/book-cover5.jpg');
+    background-size: contain;
 }

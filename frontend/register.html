@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bibleo | Login</title>
+    <title>Bibleo | Sign Up</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/_library/frontend/resources/style.css">
@@ -20,29 +20,29 @@
                 <li><a href="">Home</a></li>
                 <li><a href="/#about">About</a></li>
                 <li><a href="/#overview">Overview</a></li>
-                <li class="hero"><a href="/_library/frontend/register">Sign Up</a></li>
+                <li class="hero"><a href="/_library/frontend/login">Sign In</a></li>
             </ul>
         </div>
     </nav>
     <section id="login">
         <div class="container right"></div>
         <div class="container">
-            <h2>Sign in</h2>
-            <form action="/user/login" method="POST">
+            <h2>Sign Up</h2>
+            <form action="/user/register" method="POST">
                 <!--<%= typeof name != 'undefined' ? name : '' %>-->
                 <div class="form-group">
                     <label for="username"></label>
-                    <input type="name" id="username" name="username" class="form-control" placeholder="Enter username" value="" />
+                    <input type="name" id="username" name="username" class="form-control" placeholder="Enter a username" value="" />
                 </div>
                 <!--<%= typeof password != 'undefined' ? password : '' %>-->
                 <div class="form-group">
                     <label for="password"></label>
                     <input type="password" id="password" name="password" class="form-control" placeholder="Password" value="" />
                 </div>
-                <button type="submit" class="btn ">Sign in</button>
+                <button type="submit" class="btn ">Sign up</button>
 
             </form>
-            <span>Not a bibleophile yet? <a href="/register">Sign up</a> here!</span>
+            <span>Already a bibleophile? <a href="/login">Sign in</a> here!</span>
         </div>
     </section>
 
