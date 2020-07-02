@@ -8,7 +8,7 @@ A personal space online for storing and reading books!
 #### Project Development:
   - Backend: [Node, Express, Mongo DB]
   - Frontend: [EJS, CSS, JS]
-  - Project Duration: 30.06.2020 - 
+  - Development Duration: 30.06.2020 - live
   - Acknowledgement: Traversy Media, Dev Ed from YT
   
  ## Screen Shots:
