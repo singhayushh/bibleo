@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sha256 = require('sha256');
 const User = require('../model/User');
 
 router.get('/login', async(req, res) => {
@@ -12,13 +13,16 @@ router.get('/register', async(req, res) => {
 router.post('/register', async(req, res) => {
     const username = req.body.username;
     const password = req.body.password;
+    const time = new Date();
 
-    const newUser = new User({ username: username, password: password });
+    const sessionToken = sha256(username + time.toString())
+
+    const newUser = new User({ username: username, password: password, sessionToken: sessionToken });
     newUser.save()
         .then(user => {
-            // This cookie has been set with username for demonstration purpose. Will be changed soon.
-            res.cookie('username', username, {
-                maxAge: 60000, // Lifetime
+
+            res.cookie('token', sessionToken, {
+                maxAge: 60000, // Lifetime is 1 day for now i.e. user will have to re login each day
             })
             res.redirect('/dashboard');
         })
