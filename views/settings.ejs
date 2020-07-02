@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bibleo | My Account</title>
+    <meta name="description" content="Bibleo is an online room for reading. Featuring an online book shelf to store and showcase your e-books, Bibleo offers a pleasant and serene environment for you to read books. Sign up and become a bibleophile right now!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/resources/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
+</head>
+
+<body id="stn" onload="startTime()">
+
+    <div class="side-nav">
+        <div class="profile">
+            <div id="time"></div>
+            <img src="resources/img/avatars/<%= avatar %>.svg" height="75px" alt="">
+            <h4>
+                <%= username %>
+            </h4>
+        </div>
+        <ul class="contents">
+            <a href="/dashboard/favourites">
+                <li>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <div class="icon-text">Favourites</div>
+                </li>
+            </a>
+            <a href="/dashboard/to-read">
+                <li>
+                    <ion-icon name="stopwatch-outline"></ion-icon>
+                    <div class="icon-text">To Read</div>
+                </li>
+            </a>
+            <a href="/dashboard/have-read">
+                <li>
+                    <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                    <div class="icon-text">Have Read</div>
+                </li>
+            </a>
+            <a href="/dashboard/reading-now">
+                <li>
+                    <ion-icon name="book-outline"></ion-icon>
+                    <div class="icon-text">Reading now</div>
+                </li>
+            </a>
+            <a href="/dashboard/tags">
+                <li>
+                    <ion-icon name="pricetags-outline"></ion-icon>
+                    <div class="icon-text">Tags</div>
+                </li>
+            </a>
+        </ul>
+        <div class="settings">
+            <ul>
+                <a href="/dashboard">
+                    <li class="active">
+                        <ion-icon name="library-outline"></ion-icon>
+                        <div class="icon-text">My Library</div>
+                    </li>
+                </a>
+                <a href="/my-account">
+                    <li>
+                        <ion-icon name="settings-outline"></ion-icon>
+                        <div class="icon-text">Settings</div>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="logo">
+            <img src="./resources/img/bibleo-svg.png" height="100px" alt="">
+        </div>
+        <div class="self">
+            <img src="./resources/img/avatars/<%= avatar %>.svg" height="100px" alt="">
+            <div class="user-info">
+                <span>
+                    <%= username %>
+                </span>
+                <a href="/change-avatar">Change Avatar</a>
+            </div>
+        </div>
+        <form class="form">
+            <div class="user">
+                <h4>Account Information</h4>
+                <div class="div">
+                    <span>First Name</span>
+                    <label for="firstname"></label>
+                    <input type="name" id="firstname" name="firstname" class="form-control" placeholder="eg. Joe" value="<%= typeof first_name != 'undefined' ? first_name : '' %>" />
+                </div>
+                <div class="div">
+                    <span>Last Name</span>
+                    <label for="lastname"></label>
+                    <input type="name" id="lastname" name="firstname" class="form-control" placeholder="eg. Smith" value="<%= typeof last_name != 'undefined' ? last_name : '' %>" />
+                </div>
+                <div class="div">
+                    <span>Email</span>
+                    <label for="email"></label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="eg. joe.smith@example.com" value="<%= typeof email != 'undefined' ? email: '' %>" />
+                </div>
+                <div class="div">
+                    <span>Password</span>
+                    <div class="password"><a href="/change-password">📎 Change password</a></div>
+
+                </div>
+            </div>
+            <div class="social">
+                <h4>Socials</h4>
+                <div class="div">
+                    <span>Wordpatt</span>
+                    <label for="wordpatt"></label>
+                    <input type="url" id="wordpatt" name="wordpatt" class="form-control" placeholder="eg. joe.smith@example.com" value="<%= typeof wordpatt != 'undefined' ? wordpatt: '' %>" />
+                </div>
+                <div class="div">
+                    <span>Instagram</span>
+                    <label for="instagram"></label>
+                    <input type="url" id="instagram" name="instagram" class="form-control" placeholder="eg. https://www.instagram.com/joe_smith" value="<%= typeof instagram != 'undefined' ? instagram: '' %>" />
+                </div>
+                <div class="div">
+                    <span>Facebook</span>
+                    <label for="facebook"></label>
+                    <input type="url" id="facebook" name="facebook" class="form-control" placeholder="eg. https://www.facebook.com/profile.php?id=11" value="<%= typeof facebook != 'undefined' ? facebook: '' %>" />
+                </div>
+                <div class="div">
+                    <span>Twitter</span>
+                    <label for="twitter"></label>
+                    <input type="url" id="twitter" name="twitter" class="form-control" placeholder="eg. https://www.twitter.com/joe_smith" value="<%= typeof twitter != 'undefined' ? twitter: '' %>" />
+                </div>
+            </div>
+            <button type="submit" class="btn ">Save</button>
+        </form>
+        <a class="logout" href="/logout">Logout</a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="/resources/script.js"></script>
+</body>
+
+</html>

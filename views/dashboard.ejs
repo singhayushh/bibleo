@@ -17,43 +17,57 @@
         <div class="side-nav">
             <div class="profile">
                 <div id="time"></div>
-                <img src="resources/img/cover-sm.png" height="75px" alt="">
+                <img src="resources/img/avatars/<%= avatar %>.svg" height="75px" alt="">
                 <h4>
                     <%= username %>
                 </h4>
             </div>
             <ul class="contents">
-                <li>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <div class="icon-text">Favourites</div>
-                </li>
-                <li>
-                    <ion-icon name="stopwatch-outline"></ion-icon>
-                    <div class="icon-text">To Read</div>
-                </li>
-                <li>
-                    <ion-icon name="file-tray-stacked-outline"></ion-icon>
-                    <div class="icon-text">Have Read</div>
-                </li>
-                <li>
-                    <ion-icon name="book-outline"></ion-icon>
-                    <div class="icon-text">Reading now</div>
-                </li>
-                <li>
-                    <ion-icon name="pricetags-outline"></ion-icon>
-                    <div class="icon-text">Tags</div>
-                </li>
+                <a href="/dashboard/favourites">
+                    <li>
+                        <ion-icon name="star-outline"></ion-icon>
+                        <div class="icon-text">Favourites</div>
+                    </li>
+                </a>
+                <a href="/dashboard/to-read">
+                    <li>
+                        <ion-icon name="stopwatch-outline"></ion-icon>
+                        <div class="icon-text">To Read</div>
+                    </li>
+                </a>
+                <a href="/dashboard/have-read">
+                    <li>
+                        <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                        <div class="icon-text">Have Read</div>
+                    </li>
+                </a>
+                <a href="/dashboard/reading-now">
+                    <li>
+                        <ion-icon name="book-outline"></ion-icon>
+                        <div class="icon-text">Reading now</div>
+                    </li>
+                </a>
+                <a href="/dashboard/tags">
+                    <li>
+                        <ion-icon name="pricetags-outline"></ion-icon>
+                        <div class="icon-text">Tags</div>
+                    </li>
+                </a>
             </ul>
             <div class="settings">
                 <ul>
-                    <li class="active">
-                        <ion-icon name="library-outline"></ion-icon>
-                        <div class="icon-text">My Library</div>
-                    </li>
-                    <li>
-                        <ion-icon name="settings-outline"></ion-icon>
-                        <div class="icon-text">Settings</div>
-                    </li>
+                    <a href="/dashboard">
+                        <li class="active">
+                            <ion-icon name="library-outline"></ion-icon>
+                            <div class="icon-text">My Library</div>
+                        </li>
+                    </a>
+                    <a href="/my-account">
+                        <li>
+                            <ion-icon name="settings-outline"></ion-icon>
+                            <div class="icon-text">Settings</div>
+                        </li>
+                    </a>
                 </ul>
             </div>
         </div>

@@ -641,6 +641,7 @@ form button {
 
 .profile img {
     border-radius: 50%;
+    border: 2px solid #434f71;
 }
 
 .contents {
@@ -648,13 +649,18 @@ form button {
     border-top: 1px solid #6575a43f;
 }
 
-.side-nav ul li {
+.side-nav ul li,
+.side-nav ul a {
     width: 100%;
     margin-bottom: 10px;
-    padding: 12px 20px;
     border-radius: 22px;
     font-size: 16px;
     color: #434f71b9;
+}
+
+.side-nav ul li {
+    margin-bottom: 0;
+    padding: 12px 20px;
 }
 
 .contents li:hover {
@@ -662,6 +668,10 @@ form button {
     -moz-box-shadow: 0px 8px 17px -6px rgba(101, 117, 164, 1);
     box-shadow: 0px 8px 17px -6px rgba(101, 117, 164, 1);
     transition-delay: 30ms;
+}
+
+.settings ul li:hover {
+    font-weight: 600;
 }
 
 .side-nav ul li ion-icon {
@@ -759,4 +769,127 @@ form button {
 .b5 {
     background-image: url('img/book-cover5.jpg');
     background-size: contain;
+}
+
+
+/* --------------------- Settings UI -------------------- */
+
+#stn {
+    padding: 0;
+}
+
+#stn .logo {
+    height: 100px;
+}
+
+#stn .side-nav,
+.main {
+    display: inline-flex;
+}
+
+.main {
+    margin: 0;
+    height: max-content;
+    width: calc(100% - 300px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    margin: 30px 0;
+}
+
+.self {
+    width: 750px;
+    padding: 30px;
+    display: flex;
+    justify-content: start;
+}
+
+.self img {
+    border-radius: 50%;
+    display: inline-flex;
+}
+
+.user-info {
+    display: inline-flex;
+    height: 100px;
+    justify-content: space-around;
+    padding: 20px;
+    width: 100%;
+    flex-direction: column;
+}
+
+.user-info a {
+    color: #f95700;
+}
+
+.form {
+    height: 600px;
+    width: 750px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    font-size: 0;
+    border-top: 1px solid #6575a43f;
+    padding-top: 20px;
+}
+
+.form button {
+    margin: 0;
+}
+
+.form h4 {
+    margin: 0;
+}
+
+.user,
+.social {
+    height: 279px;
+    width: 100%;
+}
+
+.div {
+    width: 50%;
+    display: inline-flex;
+    height: 125px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    flex: auto;
+    vertical-align: top;
+}
+
+.form span {
+    font-size: 18px;
+}
+
+.form a {
+    font-size: 16px;
+}
+
+.form input {
+    border-radius: 5px;
+    height: 35px;
+    width: 75%;
+    margin: 10px 0;
+    padding-left: 10px;
+    font-size: 13px;
+    background-color: #fff;
+    color: #6575a4;
+    border: 1px solid #6575a43f;
+    -webkit-box-shadow: 0px 0px 5px -3px rgba(101, 117, 164, 1);
+    -moz-box-shadow: 0px 0px 5px -3px rgba(101, 117, 164, 1);
+    box-shadow: 0px 0px 5px -3px rgba(101, 117, 164, 1);
+}
+
+.password {
+    margin: 10px 0;
+    height: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.logout {
+    position: fixed;
+    bottom: 5vh;
+    right: 5vw;
 }
