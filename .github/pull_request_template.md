@@ -8,3 +8,4 @@ Please do not make any changes in the following files without contacting me over
 4. code-of-conduct.md
 5. how-to-run.md
 6. package.json, package-lock.json
+7. /model
