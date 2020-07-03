@@ -81,24 +81,63 @@
                 <img src="/resources/img/book2.svg" alt="">
             </div>
 
+            <div class="popup">
+                <div class="close-btn">
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
+                <form class="form" action="/add-book" method="POST">
+                    <div class="book-add">
+                        <div class="input">
+                            <span>Name of the book</span><br>
+                            <label for="book_name"></label>
+                            <input type="name" id="book_name" name="book_name" class="form-control" placeholder="eg. To Kill A Mocking Bird" value="<%= typeof book_name != 'undefined' ? book_name : '' %>" />
+                        </div>
+                        <div class="input">
+                            <span>Author(s)</span><br>
+                            <label for="author"></label>
+                            <input type="name" id="author" name="author" class="form-control" placeholder="eg. Harper Lee" value="<%= typeof author != 'undefined' ? author : '' %>" />
+                        </div>
+                        <div class="input">
+                            <span>Link to the book</span><br>
+                            <label for="book_link"></label>
+                            <input type="link" id="book_link" name="book_link" class="form-control" placeholder="eg. https://drive.google.com/file/..." value="<%= typeof book_cover != 'undefined' ? book_cover: '' %>" />
+                        </div>
+                        <div class="input">
+                            <span>Book Cover (Optional)</span><br>
+                            <label for="book_cover"></label>
+                            <input type="link" id="book_cover" name="book_cover" class="form-control" placeholder="eg. https://i.imgur.com/1NO47dH.png" value="<%= typeof book_cover != 'undefined' ? book_cover: '' %>" />
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn ">Add</button>
+                </form>
+            </div>
+
+            <p class="temp1" style="display:none">
+                <%= books.length %>
+            </p>
+
             <div class="shelf">
                 <h1>My Library</h1>
                 <ul id="sortable">
-                    <li class="book b1"></li>
-                    <li class="book b2"></li>
-                    <li class="book b3"></li>
-                    <li class="book b4"></li>
-                    <li class="book b5"></li>
-                    <li class="book b3"></li>
-                    <li class="book b4"></li>
-                    <li class="book b1"></li>
-                    <li class="book b5"></li>
-                    <li class="book b2"></li>
-                    <li class="book b1"></li>
-                    <li class="book b2"></li>
-                    <li class="book b3"></li>
-                    <li class="book b4"></li>
-                    <li class="book b5"></li>
+                    <% if (books.length) {
+                        %>
+                        <% books.forEach((book) => {
+                            %>
+                            <li class="book">
+                                <p class="image" style="display: none"><%= book.cover %> </p>
+                                <img src="" class="thumbnail" height="100%" width="100%"/>
+                            </li>
+                            <%
+                          }) %>
+                                <%
+                      } %>
+                                    <li class="book add">
+                                        <div class="add-overlay"></div>
+                                        <div class="add-btn">
+                                            Add
+                                        </div>
+                                    </li>
                 </ul>
             </div>
         </div>

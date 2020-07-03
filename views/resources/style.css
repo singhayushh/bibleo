@@ -699,7 +699,7 @@ form button {
     width: calc(100% - 300px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 30px;
     background-color: #fff;
@@ -742,33 +742,94 @@ form button {
     border: 1px solid #000;
     margin-right: 50px;
     margin-top: 50px;
-    display: inline-block;
-    float: left;
+    display: inline-flex;
+    vertical-align: top;
 }
 
-.b1 {
-    background-image: url('img/book-cover1.jpg');
-    background-size: cover;
+.add {
+    border: 1px solid #6575a45d;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: top;
 }
 
-.b2 {
-    background-image: url('img/book-cover2.jpg');
-    background-size: cover;
+.add-overlay {
+    position: absolute;
+    border: 1px solid #6575a45d;
+    height: 60px;
+    width: 60px;
+    border-radius: 5px;
 }
 
-.b3 {
-    background-image: url('img/book-cover3.jpg');
-    background-size: contain;
+.add-btn {
+    position: relative;
+    height: 62px;
+    width: 62px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 22px;
+    cursor: pointer;
 }
 
-.b4 {
-    background-image: url('img/book-cover4.jpg');
-    background-size: cover;
+.popup {
+    height: max-content;
+    width: max-content;
+    position: fixed;
+    border: 1px solid #000;
+    background-color: #f6f8fb;
+    z-index: 999;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
 }
 
-.b5 {
-    background-image: url('img/book-cover5.jpg');
-    background-size: contain;
+.popup .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.book-add {
+    height: max-content;
+    width: 500px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input span {
+    font-size: 14px !important;
+    display: block;
+    width: 75%;
+    text-align: left;
+}
+
+.close-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 30px;
+    width: 30px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.close-btn {
+    font-size: 22px;
 }
 
 
@@ -823,7 +884,7 @@ form button {
 }
 
 .form {
-    height: 600px;
+    height: 550px;
     width: 750px;
     justify-content: space-between;
     align-items: flex-start;
@@ -850,7 +911,8 @@ form button {
 .div {
     width: 50%;
     display: inline-flex;
-    height: 125px;
+    height: max-content;
+    margin-top: 20px;
     flex-direction: column;
     justify-content: center;
     align-items: start;
@@ -892,4 +954,8 @@ form button {
     position: fixed;
     bottom: 5vh;
     right: 5vw;
+}
+
+button:hover {
+    cursor: pointer;
 }

@@ -84,7 +84,7 @@
                 <a href="/change-avatar">Change Avatar</a>
             </div>
         </div>
-        <form class="form">
+        <form class="form" action="/upload" method="POST">
             <div class="user">
                 <h4>Account Information</h4>
                 <div class="div">
@@ -95,7 +95,7 @@
                 <div class="div">
                     <span>Last Name</span>
                     <label for="lastname"></label>
-                    <input type="name" id="lastname" name="firstname" class="form-control" placeholder="eg. Smith" value="<%= typeof last_name != 'undefined' ? last_name : '' %>" />
+                    <input type="name" id="lastname" name="lastname" class="form-control" placeholder="eg. Smith" value="<%= typeof last_name != 'undefined' ? last_name : '' %>" />
                 </div>
                 <div class="div">
                     <span>Email</span>
@@ -111,9 +111,9 @@
             <div class="social">
                 <h4>Socials</h4>
                 <div class="div">
-                    <span>Wordpatt</span>
-                    <label for="wordpatt"></label>
-                    <input type="url" id="wordpatt" name="wordpatt" class="form-control" placeholder="eg. joe.smith@example.com" value="<%= typeof wordpatt != 'undefined' ? wordpatt: '' %>" />
+                    <span>Wattpad</span>
+                    <label for="wattpad"></label>
+                    <input type="url" id="wattpad" name="wattpad" class="form-control" placeholder="eg.  https://www.wattpad.com/user/joe_smith" value="<%= typeof wattpad != 'undefined' ? wattpad: '' %>" />
                 </div>
                 <div class="div">
                     <span>Instagram</span>

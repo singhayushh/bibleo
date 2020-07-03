@@ -37,3 +37,27 @@ $(function() {
     $("#sortable").sortable();
     $("#sortable").disableSelection();
 });
+
+/* ---------------------- Add-Book ---------------------- */
+
+$('div.add-btn').click(function() {
+    $(".popup").css({ "display": "flex" });
+});
+
+$('div.close-btn').click(function() {
+    $(".popup").css({ "display": "none" });
+});
+
+
+/* --------------------- Book-Cover --------------------- */
+
+$(window).on("load", function() {
+    var $pic = $(".image").text().trim().split(" ");
+    for(var $i = 0; $i < $pic.length; $i++) {
+        if ($pic[$i] === "default") {
+            $pic[$i] = `./resources/img/book-cover/5.png`
+        }
+        $(`li:nth-child(${$i + 1}) img`).attr("src", $pic[$i].toString());
+    }
+    
+});
