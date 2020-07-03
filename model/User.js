@@ -11,7 +11,7 @@ const userSchema = new Schema({
     instagram: { type: String, default: null },
     facebook: { type: String, default: null },
     twitter: { type: String, default: null },
-    wordpatt: { type: String, default: null },
+    wattpad: { type: String, default: null },
     sessionToken: { type: String, default: null }
 }, {
     timestamps: true
