@@ -6,7 +6,7 @@ router.get('/login', async(req, res) => {
     const sessionToken = await req.cookies.token;
     await User.findOne({ sessionToken: sessionToken })
         .then(user => {
-            if (!user) {
+            if (!user || !sessionToken) {
                 res.render('login');
             } else {
                 res.redirect('/dashboard');
@@ -18,7 +18,7 @@ router.get('/register', async(req, res) => {
     const sessionToken = await req.cookies.token;
     await User.findOne({ sessionToken: sessionToken })
         .then(user => {
-            if (!user) {
+            if (!user || !sessionToken) {
                 res.render('register');
             } else {
                 res.redirect('/dashboard');
@@ -55,7 +55,7 @@ router.post('/login', async(req, res) => {
 
     User.findOne({ username: username, password: password })
         .then(user => {
-            if (!user) {
+            if (!user || !sessionToken) {
                 res.status(206).json('Invalid Login Credentials');
             } else {
                 user.sessionToken = sessionToken;
