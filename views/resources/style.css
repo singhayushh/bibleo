@@ -766,7 +766,7 @@ form button {
     color: #fff;
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -789,9 +789,17 @@ form button {
     font-weight: 600;
 }
 
-.foot {
-    border-bottom: none;
-    border-top: 1px solid #6575a43f;
+.book-name, .auth {
+    width: 80%;
+    word-wrap: break-word;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #f6f8fb;
+}
+
+.auth {
+    border: none;
+    font-size: 14px;
 }
 
 .add {

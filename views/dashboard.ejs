@@ -133,20 +133,7 @@
                                         <div class="toolbar">
 
                                             <div class="book-name"><%= book.name %></div>
-
-                                            <div class="forms">
-                                        
-                                                <form action="/edit-book" method="POST">
-                                                    <input type="hidden" name="book_id" class="book_id">
-                                                    <button type="submit" title="Edit"><ion-icon name="color-wand-outline"></ion-icon></button>
-                                                </form>
-
-                                                <form action="/delete-book" method="POST">
-                                                    <input type="hidden" name="book_id" class="book_id">
-                                                    <button type="submit" title="Delete"><ion-icon name="trash-outline"></ion-icon></button>
-                                                </form>
-
-                                            </div>
+                                            <div class="auth"><%= book.author %></div>
 
                                         </div>
                                     </div>
