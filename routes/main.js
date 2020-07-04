@@ -22,6 +22,7 @@ router.get('/dashboard', async(req, res) => {
                     function(err, data) {
                         if (err) res.status(400).json('Error: ' + err);
                         else {
+                            console.log(data);
                             res.render('dashboard', { username: user.username, avatar: user.avatar, books: data });
                         }
                     }
@@ -149,6 +150,20 @@ router.post('/add-book', async(req, res) => {
         .catch(err => {
             res.status(400).json(err);
         });
+});
+
+router.post('/delete-book', async(req, res) => {
+    const book_id = req.body.book_id;
+    await Book.findOne({_id: book_id})
+    .then(book => {
+        console.log(book_id + " is deleted");
+        book.remove();
+        res.redirect('/dashboard');
+        }
+    )
+    .catch(err => {
+        res.status(400).json(err);
+    });
 });
 
 
