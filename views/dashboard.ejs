@@ -126,14 +126,37 @@
                             %>
                             <li class="book">
                                 <p class="image" style="display: none"><%= book.cover %> </p>
-                                <img src="" class="thumbnail" height="100%" width="100%"/>
+                                <p class="get-link" style="display: none"><%= book.link %> </p>
+                                <p class="get-id" style="display: none"><%= book._id %> </p>
+                                <a class="book-link" href="" target="_blank">
+                                    <div class="book-overlay">
+                                        <div class="toolbar">
+
+                                            <div class="book-name"><%= book.name %></div>
+
+                                            <div class="forms">
+                                        
+                                                <form action="/edit-book" method="POST">
+                                                    <input type="hidden" name="book_id" class="book_id">
+                                                    <button type="submit" title="Edit"><ion-icon name="color-wand-outline"></ion-icon></button>
+                                                </form>
+
+                                                <form action="/delete-book" method="POST">
+                                                    <input type="hidden" name="book_id" class="book_id">
+                                                    <button type="submit" title="Delete"><ion-icon name="trash-outline"></ion-icon></button>
+                                                </form>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </a>
                             </li>
                             <%
                           }) %>
                                 <%
                       } %>
                                     <li class="book add">
-                                        <div class="add-overlay"></div>
                                         <div class="add-btn">
                                             Add
                                         </div>

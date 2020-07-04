@@ -728,7 +728,7 @@ form button {
     height: max-content;
     width: 90%;
     min-height: 250px;
-    max-height: 400px;
+    max-height: 450px;
     overflow-y: scroll;
 }
 
@@ -744,6 +744,54 @@ form button {
     margin-top: 50px;
     display: inline-flex;
     vertical-align: top;
+}
+
+.book-overlay {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.toolbar, .foot {
+    width: 100%;
+    height: 100%;
+    background-image: -webkit-linear-gradient( #2b4161c7, #2b4161c7), url('');
+    background-image: linear-gradient(#2b4161c7, #2b4161c7), url('');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.forms form {
+    height: max-content;
+    width: max-content;
+    display: inline-block;
+}
+
+.forms button {
+    background: none;
+    border: none;
+    height: max-content;
+    width: max-content;
+    padding: 10px;
+}
+
+.forms button ion-icon {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.foot {
+    border-bottom: none;
+    border-top: 1px solid #6575a43f;
 }
 
 .add {
