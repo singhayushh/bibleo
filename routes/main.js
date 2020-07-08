@@ -22,7 +22,6 @@ router.get('/dashboard', async(req, res) => {
                     function(err, data) {
                         if (err) res.status(400).json('Error: ' + err);
                         else {
-                            console.log(data);
                             res.render('dashboard', { username: user.username, avatar: user.avatar, books: data });
                         }
                     }
@@ -107,7 +106,7 @@ router.get('/profile/:username', async(req, res) => {
         })
 });
 
-router.get('/logout', async(req, res) => {
+router.post('/logout', async(req, res) => {
     const sessionToken = await req.cookies.token;
     await User.findOne({ sessionToken: sessionToken })
         .then(async user => {
@@ -156,7 +155,7 @@ router.post('/delete-book', async(req, res) => {
     const book_id = req.body.book_id;
     await Book.findOne({_id: book_id})
     .then(book => {
-        console.log(book_id + " is deleted");
+        console.log(book.name + " is deleted");
         book.remove();
         res.redirect('/dashboard');
         }
@@ -166,5 +165,62 @@ router.post('/delete-book', async(req, res) => {
     });
 });
 
+router.get('/edit-book', async(req, res) => {
+    const book_id = req.query.book_id;
+    const sessionToken = await req.cookies.token;
+    await User.findOne({ sessionToken: sessionToken })
+        .then(async user => {
+            await Book.findOne({_id: book_id, user_id: user._id})
+            .then(book => {
+                res.render('edit-book', {
+                    book_id : book._id,
+                    book_name : book.name,
+                    author : book.author,
+                    book_link : book.link,
+                    book_cover : book.cover,
+                    book_favourite : book.favourite,
+                    book_have_read : book.have_read,
+                    book_reading_now : book.reading_now,
+                    book_tags : book.tags,
+                    username: user.username,
+                    avatar: user.avatar
+                })
+            })
+            .catch(err => {
+                res.status(400).json(err);
+            });
+        })
+        .catch(err => {
+            res.status(400).json('Invalid Credentials');
+        });
+});
+
+router.post('/edit-book', async(req, res) => {
+    const book_id = req.body.book_id;
+    await Book.findOne({_id: book_id})
+    .then(book => {
+            book.name = req.body.book_name;
+            book.author = req.body.author;
+            book.link = req.body.book_link;
+            book.cover = req.body.book_cover;
+            book.favourite = req.body.book_favourite;
+            book.have_read = req.body.book_have_read;
+            book.reading_now = req.body.book_reading_now;
+            const tags = req.body.book_tags.trim().split(",");
+            book.tags = tags;
+            book.save()
+                .then(() => {
+                    res.redirect('/dashboard');
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.status(400).json(err);
+            });
+        }
+    )
+    .catch(err => {
+        res.status(400).json(err);
+    });
+});
 
 module.exports = router;
