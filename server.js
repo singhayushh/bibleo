@@ -11,7 +11,7 @@ require('dotenv').config(); // Aryan ask for the .env file if you have read this
 /* ----------------- Basic Server Config ---------------- */
 
 const app = express();
-const port = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 const startTime = new Date();
 
 
@@ -56,6 +56,6 @@ app.route('/api').get((req, res) => {
 
 /* --------------------- Run Server --------------------- */
 
-app.listen(port, () => {
-    console.log(`Server is running on 127.0.0.1:${port}`);
+app.listen(PORT, () => {
+    console.log(`Bibleo is running on port ${ PORT }`);
 });
