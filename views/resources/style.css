@@ -964,6 +964,12 @@ form button {
     width: 100%;
 }
 
+.ed {
+    position: fixed;
+    margin-left: 75px;
+    margin-top: 200px;
+}
+
 .div {
     width: 50%;
     display: inline-flex;
@@ -990,6 +996,7 @@ form button {
     width: 75%;
     margin: 10px 0;
     padding-left: 10px;
+    padding-right: 10px;
     font-size: 13px;
     background-color: #fff;
     color: #6575a4;
@@ -999,12 +1006,117 @@ form button {
     box-shadow: 0px 0px 5px -3px rgba(101, 117, 164, 1);
 }
 
+.label {
+    font-size: 16px;
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 10px;
+}
+
+.label label {
+    width: 50%;
+    display: inline-flex;
+}
+
+.check-box {
+    display: inline-flex;
+    width: 5px !important;
+}
+
+.check-text {
+    display: inline-flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
 .password {
     margin: 10px 0;
     height: 35px;
     display: flex;
     align-items: center;
 }
+
+input[type='radio'] {
+    border-radius: 50%;
+}
+input[type='radio']:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: var(--active-inner);
+    opacity: 0;
+    transform: scale(var(--s, 0.7));
+}
+input[type='radio']:checked {
+    --s: 0.5;
+}
+
+input[type='radio'] {
+    --active: #fff;
+    --active-inner: #6e7ea8;
+    --focus: 2px rgba(39, 94, 254, .3);
+    --border: #bbc1e1;
+    --border-hover: #6e7ea8;
+    --background: #fff;
+    --disabled: #f6f8ff;
+    --disabled-inner: #e1e6f9;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 21px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+}
+input[type='radio']:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+}
+input[type='radio']:checked {
+    --b: var(--active);
+    --bc: var(--active);
+    --d-o: 0.3s;
+    --d-t: 0.6s;
+    --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+input[type='radio']:disabled {
+    --b: var(--disabled);
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+input[type='radio']:disabled:checked {
+    --b: var(--disabled-inner);
+    --bc: var(--border);
+}
+input[type='radio']:disabled + label {
+    cursor: not-allowed;
+}
+input[type='radio']:hover:not(:checked):not(:disabled) {
+    --bc: var(--border-hover);
+}
+input[type='radio']:focus {
+    box-shadow: 0 0 0 var(--focus);
+}
+input[type='radio']:not(.switch) {
+    width: 21px;
+}
+input[type='radio']:not(.switch):after {
+    opacity: var(--o, 0);
+}
+input[type='radio']:not(.switch):checked {
+    --o: 1;
+}
+
 
 .logout {
     position: fixed;

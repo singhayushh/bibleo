@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bibleo | My Account</title>
+    <meta name="description" content="Bibleo is an online room for reading. Featuring an online book shelf to store and showcase your e-books, Bibleo offers a pleasant and serene environment for you to read books. Sign up and become a bibleophile right now!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/resources/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
+</head>
+
+<body id="stn" onload="startTime()">
+
+    <div class="side-nav">
+        <div class="profile">
+            <div id="time"></div>
+            <img src="resources/img/avatars/<%= avatar %>.svg" height="75px" alt="">
+            <h4>
+                <%= username %>
+            </h4>
+        </div>
+        <ul class="contents">
+            <a href="/dashboard/favourites">
+                <li>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <div class="icon-text">Favourites</div>
+                </li>
+            </a>
+            <a href="/dashboard/to-read">
+                <li>
+                    <ion-icon name="stopwatch-outline"></ion-icon>
+                    <div class="icon-text">To Read</div>
+                </li>
+            </a>
+            <a href="/dashboard/have-read">
+                <li>
+                    <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                    <div class="icon-text">Have Read</div>
+                </li>
+            </a>
+            <a href="/dashboard/reading-now">
+                <li>
+                    <ion-icon name="book-outline"></ion-icon>
+                    <div class="icon-text">Reading now</div>
+                </li>
+            </a>
+            <a href="/dashboard/tags">
+                <li>
+                    <ion-icon name="pricetags-outline"></ion-icon>
+                    <div class="icon-text">Tags</div>
+                </li>
+            </a>
+        </ul>
+        <div class="settings">
+            <ul>
+                <a href="/dashboard">
+                    <li class="active">
+                        <ion-icon name="library-outline"></ion-icon>
+                        <div class="icon-text">My Library</div>
+                    </li>
+                </a>
+                <a href="/my-account">
+                    <li>
+                        <ion-icon name="settings-outline"></ion-icon>
+                        <div class="icon-text">Settings</div>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <div class="book ed">
+        <img src="<%= book_cover %>" alt="">
+    </div>
+    <div class="main">
+        <div class="logo">
+            <img src="./resources/img/bibleo-svg.png" height="100px" alt="">
+        </div>
+        <form class="form" action="/edit-book" method="POST">
+            <input type="hidden" name="book_id" value="<%= book_id %>">
+            <div class="user">
+                <h4>Book Information</h4>
+                <div class="div">
+                    <span>Book Name</span>
+                    <label for="book_name"></label>
+                    <input type="name" id="book_name" name="book_name" class="form-control" placeholder="eg. Pride and Prejudice" value="<%= typeof book_name != 'undefined' ? book_name : '' %>" />
+                </div>
+                <div class="div">
+                    <span>Author</span>
+                    <label for="author"></label>
+                    <input type="name" id="author" name="author" class="form-control" placeholder="eg. Robert Frost" value="<%= typeof author != 'undefined' ? author : '' %>" />
+                </div>
+                <div class="div">
+                    <span>Source</span>
+                    <label for="book_link"></label>
+                    <input type="book_link" id="book_link" name="book_link" class="form-control" placeholder="eg. https://www.drive.google.com.file/.." value="<%= typeof book_link != 'undefined' ? book_link: '' %>" />
+                </div>
+                <div class="div">
+                    <span>Book Cover Link</span>
+                    <label for="book_cover"></label>
+                    <input type="url" id="book_cover" name="book_cover" class="form-control" placeholder="eg.  https://www.xyz.com/img/book-cover.png" value="<%= typeof book_cover != 'undefined' ? book_cover: '' %>" />
+                </div>
+            </div>
+            <div class="social">
+                <h4>Book Utilities</h4>                
+                <div class="div">
+                    <span>Add to favourites?</span>
+                    <div class="label">
+                        <label>
+                            <input type="radio" class="radio check-box" value="false" name="book_favourite" 
+                            <% if(book_favourite === false) { %> 
+                                checked 
+                            <% } %>
+                            /><div class="check-text">No</div>
+                        </label>
+                        <label>
+                            <input type="radio" class="radio check-box" value="true" name="book_favourite" 
+                            <% if(book_favourite === true) { %> 
+                                checked 
+                            <% } %>
+                            /><div class="check-text">Yes</div>
+                        </label>
+                    </div>
+                </div>
+                <div class="div">
+                    <span>Have Read</span>
+                    <div class="label">
+                        <label>
+                            <input type="radio" class="radio check-box" value="false" name="book_have_read" 
+                            <% if(book_have_read === false) { %> 
+                                checked 
+                            <% } %>
+                            /><div class="check-text">No</div>
+                        </label>
+                        <label>
+                            <input type="radio" class="radio check-box" value="true" name="book_have_read" 
+                            <% if(book_have_read === true) { %> 
+                                checked 
+                            <% } %>
+                            /><div class="check-text">Yes</div>
+                        </label>
+                    </div>
+                </div>
+                <div class="div">
+                    <span>Reading Now</span>
+                    <div class="label">
+                        <label>
+                            <input type="radio" class="radio check-box" value="false" name="book_reading_now" 
+                            <% if(book_reading_now === false) { %> 
+                                checked 
+                            <% } %>
+                            /><div class="check-text">No</div>
+                        </label>
+                        <label>
+                            <input type="radio" class="radio check-box" value="true" name="book_reading_now"
+                            <% if(book_reading_now === true) { %> 
+                                checked 
+                            <% } %>
+                            /><div class="check-text">Yes</div>
+                        </label>
+                    </div>
+                </div>
+                <div class="div">
+                    <span>Tags</span>
+                    <label for="book_tags"></label>
+                    <input type="text" id="book_tags" name="book_tags" class="form-control" placeholder="separate tags by comma" value="<%= typeof book_tags != 'undefined' ? book_tags: '' %>" />
+                </div>
+            </div>
+            <button type="submit" class="btn ">Save</button>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="/resources/script.js"></script>
+</body>
+
+</html>

@@ -61,19 +61,30 @@ function() {
 
 $(window).on("load", function() {
     var $pic = $(".image").text().trim().split(" ");
-    var $link = $(".get-link").text().trim().split(" ");
-    var $id = $(".get-id").text().trim().split(" ");    
     if ($pic.length === 1 && $pic[0] === "") return;
     for(var $i = 0; $i < $pic.length; $i++) {
         if ($pic[$i] === "default") {
             $pic[$i] = `./resources/img/book-cover/default.png`
         }
         try {
-            $(`li:nth-child(${$i + 1}) a`).attr("href", $link[$i].toString());
-            $(".book_id").eq($i).val($id[$i]);
             $(`li:nth-child(${$i + 1}) a`).css({"background-image": `url(${$pic[$i].toString()})`, "background-size": "100% 100%", "height": "100%", "width": "100%"});
         }
         catch(err){alert(err)}
     }
-    
+        
 });
+
+/* ------------------- Select Checkbox ------------------ */
+
+$("input:checkbox").on('click', function() {
+    
+    var $box = $(this);
+    if ($box.is(":checked")) {
+      
+      var group = "input:checkbox[name='" + $box.attr("name") + "']";
+      $(group).prop("checked", false);
+      $box.prop("checked", true);
+    } else {
+      $box.prop("checked", false);
+    }
+  });
