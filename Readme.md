@@ -11,6 +11,9 @@ A personal space online for storing and reading books!
   - Development Duration: 30.06.2020 - live
   - Acknowledgement: Traversy Media, Dev Ed from YT
   
+ #### How to run the project on localhost
+ Go through the [how-to-run.md](https://github.com/singhayushh/project_Bookmarks/blob/master/how-to-run.md) for details.
+  
  ## Screen Shots:
  
  #### Dashboard
