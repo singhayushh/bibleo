@@ -28,7 +28,7 @@ router.get('/register', async(req, res) => {
 
 router.post('/register', async(req, res) => {
     const username = req.body.username;
-    const password = req.body.password;
+    const password = sha256(req.body.password);
     const time = new Date();
 
     const sessionToken = sha256(username + time.toString());
@@ -49,7 +49,7 @@ router.post('/register', async(req, res) => {
 
 router.post('/login', async(req, res) => {
     const username = req.body.username;
-    const password = req.body.password;
+    const password = sha256(req.body.password);
     const time = new Date();
     const sessionToken = sha256(username + time.toString());
 
