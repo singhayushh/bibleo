@@ -51,7 +51,7 @@ app.use('/', mainRouter);
 /* ------------------ Test Route Setup ------------------ */
 
 app.route('/api').get((req, res) => {
-    res.json("Server started successfully on " + startTime);
+    res.send("Server started successfully on " + startTime);
 });
 
 /* --------------------- Run Server --------------------- */
