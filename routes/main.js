@@ -7,7 +7,6 @@ router.route('/').get((req, res) => {
 });
 
 router.get('/dashboard', async(req, res) => {
-    // Demonstration
     const sessionToken = await req.cookies.token;
     await User.findOne({ sessionToken: sessionToken })
         .then(async user => {
@@ -81,7 +80,6 @@ router.post('/upload', async(req, res) => {
                     .catch(err => {
                         res.status(400).json(err)
                     });
-
             }
         })
 });
@@ -103,6 +101,40 @@ router.get('/profile/:username', async(req, res) => {
         })
         .catch(err => {
             res.status(400).json(err);
+        })
+});
+
+router.get('/change-avatar', async(req, res) => {
+    const sessionToken = await req.cookies.token;
+    await User.findOne({ sessionToken: sessionToken })
+    .then(async user => {
+        if (!user || !sessionToken) {
+            res.redirect('/users/login');
+        } else {
+            res.render('avatar', { username: user.username, avatar: user.avatar });
+        }
+    })
+    .catch(err => res.status(400).json(err));
+});
+
+router.post('/change-avatar', async(req, res) => {
+    const sessionToken = await req.cookies.token;
+    await User.findOne({ sessionToken: sessionToken })
+        .then(async user => {
+            if (!user || !sessionToken) {
+                res.redirect('/users/login');
+            } else {
+                if (req.body.avatar)
+                user.avatar = req.body.avatar;
+
+                await user.save()
+                    .then(() => {
+                        res.redirect('/dashboard');
+                    })
+                    .catch(err => {
+                        res.status(400).json(err)
+                    });
+            }
         })
 });
 
@@ -168,6 +200,7 @@ router.post('/delete-book', async(req, res) => {
 router.get('/edit-book', async(req, res) => {
     const book_id = req.query.book_id;
     const sessionToken = await req.cookies.token;
+    console.log(sessionToken, req.cookies)
     await User.findOne({ sessionToken: sessionToken })
         .then(async user => {
             await Book.findOne({_id: book_id, user_id: user._id})

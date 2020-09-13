@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bibleo | Change Avatar</title>
+    <meta name="description" content="Bibleo is an online room for reading. Featuring an online book shelf to store and showcase your e-books, Bibleo offers a pleasant and serene environment for you to read books. Sign up and become a bibleophile right now!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/resources/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
+</head>
+
+<body id="stn" onload="startTime()">
+
+    <div class="side-nav">
+        <div class="profile">
+            <div id="time"></div>
+            <img src="resources/img/avatars/<%= avatar %>.svg" height="75px" alt="">
+            <h4>
+                <%= username %>
+            </h4>
+        </div>
+        <ul class="contents">
+            <a href="/dashboard/favourites">
+                <li>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <div class="icon-text">Favourites</div>
+                </li>
+            </a>
+            <a href="/dashboard/to-read">
+                <li>
+                    <ion-icon name="stopwatch-outline"></ion-icon>
+                    <div class="icon-text">To Read</div>
+                </li>
+            </a>
+            <a href="/dashboard/have-read">
+                <li>
+                    <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                    <div class="icon-text">Have Read</div>
+                </li>
+            </a>
+            <a href="/dashboard/reading-now">
+                <li>
+                    <ion-icon name="book-outline"></ion-icon>
+                    <div class="icon-text">Reading now</div>
+                </li>
+            </a>
+            <a href="/dashboard/tags">
+                <li>
+                    <ion-icon name="pricetags-outline"></ion-icon>
+                    <div class="icon-text">Tags</div>
+                </li>
+            </a>
+        </ul>
+        <div class="settings">
+            <ul>
+                <a href="/dashboard">
+                    <li class="active">
+                        <ion-icon name="library-outline"></ion-icon>
+                        <div class="icon-text">My Library</div>
+                    </li>
+                </a>
+                <a href="/my-account">
+                    <li>
+                        <ion-icon name="settings-outline"></ion-icon>
+                        <div class="icon-text">Settings</div>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="logo">
+            <img src="./resources/img/bibleo-svg.png" height="100px" alt="">
+        </div>
+        <div class="self">
+            <img src="./resources/img/avatars/<%= avatar %>.svg" height="100px" alt="">
+            <div class="user-info">
+                <span>
+                    <%= username %>
+                </span>
+                <a>Change Avatar</a>
+            </div>
+        </div>
+        <form class="form change-avatar" action="/change-avatar" method="POST">
+            <div class="user">
+                <h4>Choose your Avatar</h4>
+                <div class="div">
+                    <label for="avatar"></label>
+                    <select id="avatar" name="avatar">
+                        <option value="<%= avatar %>"><%= avatar %> - Current</option>
+                        <option value="Chloe">Chloe</option>
+                        <option value="Emily">Emily</option>
+                        <option value="Harry">Harry</option>
+                        <option value="Ikaku">Ikaku</option>
+                        <option value="Isabella">Isabella</option>
+                        <option value="Kito">Kito</option>
+                        <option value="Lucius">Lucius</option>
+                        <option value="Velma">Velma</option>
+                      </select>
+                </div>
+            </div>
+            <button type="submit" class="btn ">Save</button>
+            <div class="avatars">
+                <div class="col">
+                    <img src="./resources/img/avatars/Chloe.svg" alt="Chloe">
+                    <div class="name">
+                        <h4>Chloe</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="./resources/img/avatars/Emily.svg" alt="Emily">
+                    <div class="name">
+                        <h4>Emily</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="./resources/img/avatars/Harry.svg" alt="Harry">
+                    <div class="name">
+                        <h4>Harry</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="./resources/img/avatars/Ikaku.svg" alt="Ikaku">
+                    <div class="name">
+                        <h4>Ikaku</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="./resources/img/avatars/Isabella.svg" alt="Isabella">
+                    <div class="name">
+                        <h4>Isabella</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="./resources/img/avatars/Kito.svg" alt="Kito">
+                    <div class="name">
+                        <h4>Kito</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="./resources/img/avatars/Lucius.svg" alt="Lucius">
+                    <div class="name">
+                        <h4>Lucius</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="./resources/img/avatars/Rose.svg" alt="Rose">
+                    <div class="name">
+                        <h4>Rose</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="./resources/img/avatars/Velma.svg" alt="Velma">
+                    <div class="name">
+                        <h4>Velma</h4>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="/resources/script.js"></script>
+</body>
+
+</html>
