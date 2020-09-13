@@ -583,7 +583,6 @@ form button {
 /* -------------------- Dashboard UI -------------------- */
 
 .dashboard {
-    overflow: hidden;
     background-color: #fff;
 }
 
@@ -596,6 +595,7 @@ form button {
     padding: 0px 30px;
     float: left;
     background-color: #f6f8fb;
+    position: fixed;
 }
 
 .side-nav h4 {
@@ -696,6 +696,7 @@ form button {
 
 .board {
     height: max-content;
+    margin-left: 300px;
     width: calc(100% - 300px);
     display: flex;
     flex-direction: column;
@@ -710,7 +711,7 @@ form button {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 45vh;
+    height: 300px;
     width: 90%;
     margin-bottom: 30px;
     padding: 20px;
@@ -831,6 +832,7 @@ form button {
 }
 
 .popup {
+    margin-top: -50px;
     height: max-content;
     width: max-content;
     position: fixed;
@@ -906,12 +908,12 @@ form button {
 
 .main {
     margin: 0;
+    margin-left: 300px;
     height: max-content;
     width: calc(100% - 300px);
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    margin: 30px 0;
 }
 
 .self {
@@ -940,7 +942,7 @@ form button {
 }
 
 .form {
-    height: 550px;
+    height: max-content;
     width: 750px;
     justify-content: space-between;
     align-items: flex-start;
@@ -950,8 +952,12 @@ form button {
     padding-top: 20px;
 }
 
+.change-avatar {
+    height: max-content;
+}
+
 .form button {
-    margin: 0;
+    margin: 30px 0px;
 }
 
 .form h4 {
@@ -960,11 +966,13 @@ form button {
 
 .user,
 .social {
-    height: 279px;
+    height: max-content;
     width: 100%;
+    margin-top: 30px;
 }
 
 .ed {
+    display: none;
     position: fixed;
     margin-left: 75px;
     margin-top: 200px;
@@ -982,6 +990,32 @@ form button {
     vertical-align: top;
 }
 
+.avatars {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.col {
+    height: 300px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.col img {
+    height: 150px;
+}
+
+.name {
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+}
+
 .form span {
     font-size: 18px;
 }
@@ -990,7 +1024,7 @@ form button {
     font-size: 16px;
 }
 
-.form input {
+.form input, select {
     border-radius: 5px;
     height: 35px;
     width: 75%;
