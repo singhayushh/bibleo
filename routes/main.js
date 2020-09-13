@@ -21,7 +21,111 @@ router.get('/dashboard', async(req, res) => {
                     function(err, data) {
                         if (err) res.status(400).json('Error: ' + err);
                         else {
-                            res.render('dashboard', { username: user.username, avatar: user.avatar, books: data });
+                            res.render('dashboard', { title: "My Library", username: user.username, avatar: user.avatar, books: data });
+                        }
+                    }
+                );
+            }
+        })
+        .catch(err => {
+            res.status(400).json(err);
+        });
+});
+
+router.get('/dashboard/favourites', async(req, res) => {
+    const sessionToken = await req.cookies.token;
+    await User.findOne({ sessionToken: sessionToken })
+        .then(async user => {
+            if (!user || !sessionToken) {
+                res.redirect('/users/login');
+            } else {
+                await Book.aggregate([{
+                        $match: {
+                            favourite: true
+                        }
+                    }],
+                    function(err, data) {
+                        if (err) res.status(400).json('Error: ' + err);
+                        else {
+                            res.render('dashboard', { title: "Favourites", username: user.username, avatar: user.avatar, books: data });
+                        }
+                    }
+                );
+            }
+        })
+        .catch(err => {
+            res.status(400).json(err);
+        });
+});
+
+router.get('/dashboard/have-read', async(req, res) => {
+    const sessionToken = await req.cookies.token;
+    await User.findOne({ sessionToken: sessionToken })
+        .then(async user => {
+            if (!user || !sessionToken) {
+                res.redirect('/users/login');
+            } else {
+                await Book.aggregate([{
+                        $match: {
+                            have_read: true
+                        }
+                    }],
+                    function(err, data) {
+                        if (err) res.status(400).json('Error: ' + err);
+                        else {
+                            res.render('dashboard', { title: "Have Read", username: user.username, avatar: user.avatar, books: data });
+                        }
+                    }
+                );
+            }
+        })
+        .catch(err => {
+            res.status(400).json(err);
+        });
+});
+
+router.get('/dashboard/to-read', async(req, res) => {
+    const sessionToken = await req.cookies.token;
+    await User.findOne({ sessionToken: sessionToken })
+        .then(async user => {
+            if (!user || !sessionToken) {
+                res.redirect('/users/login');
+            } else {
+                await Book.aggregate([{
+                        $match: {
+                            have_read: false
+                        }
+                    }],
+                    function(err, data) {
+                        if (err) res.status(400).json('Error: ' + err);
+                        else {
+                            res.render('dashboard', { title: "To Read", username: user.username, avatar: user.avatar, books: data });
+                        }
+                    }
+                );
+            }
+        })
+        .catch(err => {
+            res.status(400).json(err);
+        });
+});
+
+router.get('/dashboard/reading-now', async(req, res) => {
+    const sessionToken = await req.cookies.token;
+    await User.findOne({ sessionToken: sessionToken })
+        .then(async user => {
+            if (!user || !sessionToken) {
+                res.redirect('/users/login');
+            } else {
+                await Book.aggregate([{
+                        $match: {
+                            reading_now: true
+                        }
+                    }],
+                    function(err, data) {
+                        if (err) res.status(400).json('Error: ' + err);
+                        else {
+                            res.render('dashboard', { title: "Reading Now", username: user.username, avatar: user.avatar, books: data });
                         }
                     }
                 );

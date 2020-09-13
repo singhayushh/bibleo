@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bibleo | Dashboard</title>
+    <title>Bibleo | <%= title %></title>
     <meta name="description" content="Bibleo is an online room for reading. Featuring an online book shelf to store and showcase your e-books, Bibleo offers a pleasant and serene environment for you to read books. Sign up and become a bibleophile right now!">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/resources/style.css">
@@ -17,7 +17,7 @@
         <div class="side-nav">
             <div class="profile">
                 <div id="time"></div>
-                <img src="resources/img/avatars/<%= avatar %>.svg" height="75px" alt="">
+                <img src="/resources/img/avatars/<%= avatar %>.svg" height="75px" alt="">
                 <h4>
                     <%= username %>
                 </h4>
@@ -103,9 +103,9 @@
                             <input type="link" id="book_link" name="book_link" class="form-control" placeholder="eg. https://drive.google.com/file/..." value="<%= typeof book_cover != 'undefined' ? book_cover: '' %>" />
                         </div>
                         <div class="input">
-                            <span>Book Cover (Optional)</span><br>
+                            <span>Book Cover Link (Optional)</span><br>
                             <label for="book_cover"></label>
-                            <input type="link" id="book_cover" name="book_cover" class="form-control" placeholder="eg. https://i.imgur.com/1NO47dH.png" value="<%= typeof book_cover != 'undefined' ? book_cover: '' %>" />
+                            <input type="link" id="book_cover" name="book_cover" class="form-control" placeholder="eg. https://i.imgur.com/1NO47dH.png 300x220px" value="<%= typeof book_cover != 'undefined' ? book_cover: '' %>" />
                         </div>
 
                     </div>
@@ -118,7 +118,7 @@
             </p>
 
             <div class="shelf">
-                <h1>My Library</h1>
+                <h1><%= title %></h1>
                 <ul id="sortable">
                     <% if (books.length) {
                         %>
