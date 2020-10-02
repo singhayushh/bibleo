@@ -1161,3 +1161,17 @@ input[type='radio']:not(.switch):checked {
 button:hover {
     cursor: pointer;
 }
+
+.rounded{
+    height: 150px;
+}
+
+/* profile page */
+.grid {
+    margin-top:0px;
+}
+
+.lable{
+    margin-top:0px;
+   
+}

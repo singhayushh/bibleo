@@ -1,37 +1,116 @@
-<ul>
-    <% if (username !== null && username !== '') { %>
-        <li>
-            <%= username %>
-        </li>
-        <% } %>
-            <% if (full_name !== null && full_name !== '') { %>
-                <li>
-                    <%= full_name %>
-                </li>
-                <% } %>
-                    <% if (email !== null && email !== '') { %>
-                        <li>
-                            <%= email %>
-                        </li>
-                        <% } %>
-                            <% if (instagram !== null && instagram !== '') { %>
-                                <li>
-                                    <%= instagram %>
-                                </li>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibleo | Profile Page</title>
+    <meta name="description"
+        content="Bibleo is an online room for reading. Featuring an online book shelf to store and showcase your e-books, Bibleo offers a pleasant and serene environment for you to read books. Sign up and become a bibleophile right now!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/resources/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="logo"><img src="/resources/img/bibleo-svg.png" alt="Bibleo Logo" height="100%"></div>
+        <div class="legend">
+            <ul>
+                <li><a href="/"></a></li>
+                <li class="hero"><a href="/dashboard">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row grid">
+            <div class="col-4">
+                <div class="text-center">
+                    <img src="/resources/img/avatars/sample-profile.png" class="rounded">
+                </div>
+            </div>
+            <div class="col-8">
+                
+                  
+                <div class="row lable">
+                    <div class="card"  style="height:400px;" >
+                    <div class="card-body">
+                      <h5 class="card-title">User Details</h5>
+                      <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                      <p class="card-text">
+
+                        <tr>
+                            <th><label for=""><strong>Username </strong>: </th>
+                            <td>
+                                 <% if (username !== null && username !== '') { %>
+                               
+                                <% }else{ %>
+                                Dummmy text
+                                <%} %>
+                        </tr>
+                        <tr>
+                            <th><label for=""><strong>Full Name </strong>: </th>
+                            <td>
+                                <% if (full_name !== null && full_name !== '') { %>
+                                <%= full_name %>
+                                <% }else{ %>
+                                Dummmy textasdadadasdsadads
+                                <%} %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for=""><strong>Email </strong>: </th>
+                            <td>
+                                <% if (email !== null && email !== '') { %>
+                                <%= email %>
+                                <% }else{ %>
+                                Dummmy texttextasdadadasdsadads
+                                <%} %>
+                            </td>
+                        </tr><br>
+                        <tr>
+                            <th><label for=""><strong>Social Media Accounts </strong>: </th>
+                            <td>
+                                <% if (instagram !== null && instagram !== '') { %>
+
+                                <%= instagram %>
+
                                 <% } %>
-                                    <% if (facebook !== null && facebook !== '') { %>
-                                        <li>
-                                            <%= facebook %>
-                                        </li>
-                                        <% } %>
-                                            <% if (twitter !== null && twitter !== '') { %>
-                                                <li>
-                                                    <%= twitter %>
-                                                </li>
-                                                <% } %>
-                                                    <% if (wattpad !== null && wattpad !== '') { %>
-                                                        <li>
-                                                            <%= wattpad %>
-                                                        </li>
-                                                        <% } %>
-</ul>
+                                <% if (facebook !== null && facebook !== '') { %>
+
+                                <%= facebook %>
+
+                                <% } %>
+                                <% if (twitter !== null && twitter !== '') { %>
+
+                                <%= twitter %>
+
+                                <% } %>
+                                <% if (wattpad !== null && wattpad !== '') { %>
+
+                                <%= wattpad %>
+
+                                <% } %>
+
+                            </td>
+                        </tr>
+
+                        
+                      </p>
+                      <tr>
+                        <th><label for=""><strong>Address </strong>: </th>
+                        <td>
+                            In vel lacus a leo gravida tempor. Sed non venenatis tellus. Sed scelerisque sagittis nisi ac interdum. Ut nec faucibus nisi. Sed diam mi, varius eget neque ut, tri
+                    </tr>
+                    </div>
+                  </div>
+                  
+
+            </div>
+        </div>
+      
+</body>
+
+</html>
