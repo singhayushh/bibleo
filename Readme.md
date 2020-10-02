@@ -1,4 +1,6 @@
 <h1 align="center">Welcome to Bibleo! 👋</h1>
+<p align="center">A personal space online for storing and reading books</p>
+<br />
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <img alt="Maintenance" src="https://img.shields.io/badge/Maintained-yes-blue.svg" />
@@ -6,8 +8,6 @@
     <img alt="Licence" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" />
   </a>
 </p>
-
-> A personal space online for storing and reading books!
 
 ## ❓ What is this project about?
 
@@ -50,6 +50,6 @@ Feel free to fork and open a pull request. [contribution guidelines](https://git
 
 ## 🙌 Show your support
 
-give a ⭐️ if you liked this!
+Give a ⭐️ if you liked this!
 
 <hr>
