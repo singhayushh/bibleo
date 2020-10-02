@@ -71,4 +71,16 @@ router.post('/login', async(req, res) => {
         });
 });
 
+router.get('/logout',async(req,res)=>{
+    const sessionToken = req.cookies.token;
+    User.findOneAndUpdate({sessionToken:sessionToken},{sessionToken:null},{
+        new:true
+    }).then(user=>{
+        return res.redirect('/');
+    }).catch(err=>{
+        res.status(400).json(err);
+    })
+
+});
+
 module.exports = router;
