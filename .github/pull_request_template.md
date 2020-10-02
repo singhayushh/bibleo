@@ -1,7 +1,8 @@
-While making a pull request, do remember to give some meaningful comments for the greater good of understanding and collaborating.
-Do keep an eye of the reviewing of the PR or comments added after the pull, if any and always be home to my thankfulness for your contribution. :)
+### Description
+...
 
-Please do not make any changes in the following files without contacting me over mail - coding.ayush@gmail.com, else the PR wouldn't be considered:
+- [ ] Documented wherever required
+- [ ] I confirm I did not change any of the following files
 1. LICENSE
 2. Readme.md
 3. contributing.md
