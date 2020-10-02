@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to project bookmarks 👋</h1>
+<h1 align="center">Welcome to Bibleo! 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <img alt="Maintenance" src="https://img.shields.io/badge/Maintained-yes-blue.svg" />
