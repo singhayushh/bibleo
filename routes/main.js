@@ -195,13 +195,13 @@ router.get('/profile/:username', async(req, res) => {
                 last_name = '',
                 full_name = '';
             if (user.full_name) {
-                full_name = user.full_name.split();
+                full_name = user.full_name.split(" ");    // Fix split by space
                 if (full_name.length > 1) {
                     first_name = full_name[0];
                     last_name = full_name[1];
                 }
             }
-            res.render('profile', { username: user.username, avatar: user.avatar, full_name: user.full_name, first_name: first_name, last_name: last_name, email: user.email, instagram: user.instagram, facebook: user.facebook, twitter: user.twitter, wattpad: user.wattpad });
+            res.render('profile', {  title: "My Profile", username: user.username, avatar: user.avatar, full_name: user.full_name, first_name: first_name, last_name: last_name, email: user.email, instagram: user.instagram, facebook: user.facebook, twitter: user.twitter, wattpad: user.wattpad });
         })
         .catch(err => {
             res.status(400).json(err);
