@@ -176,6 +176,12 @@ h2 {
     letter-spacing: 3px;
 }
 
+h3{
+    color: #434f71;
+    font-size: 28px;
+    letter-spacing: 1.5px;
+}
+
 h4 {
     color: #434f71;
     font-size: 24px;
@@ -1160,4 +1166,80 @@ input[type='radio']:not(.switch):checked {
 
 button:hover {
     cursor: pointer;
+}
+
+/************** Profile Page ******************/
+
+.info{
+    width: 700px;
+    height: auto;
+}
+
+.profile-img{
+    border-radius: 50%;
+    border: 2px solid #434f71;
+}
+
+.tab{
+    overflow: hidden;
+    /** border: 1px solid #ccc; */
+    /** background-color: #f1f1f1; */
+    border-bottom: 1px solid #6575a4;
+}
+
+.tab button{
+    background-color: inherit;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    font-size: 16px;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #6575a4;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    /** border: 1px solid #ccc; */
+    border-top: none;
+}
+
+.tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+.table-profile{
+    padding: 20px;
+    width: 500px;
+}
+
+.table-profile-social{
+    width: 100%;
+    padding: 20px;
+}
+
+.table-profile tr,
+.table-profile-social tr{
+    height: 45px;
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }

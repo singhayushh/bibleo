@@ -1,37 +1,186 @@
-<ul>
-    <% if (username !== null && username !== '') { %>
-        <li>
-            <%= username %>
-        </li>
-        <% } %>
-            <% if (full_name !== null && full_name !== '') { %>
-                <li>
-                    <%= full_name %>
-                </li>
-                <% } %>
-                    <% if (email !== null && email !== '') { %>
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bibleo | <%= title %></title>
+    <meta name="description" content="Bibleo is an online room for reading. Featuring an online book shelf to store and showcase your e-books, Bibleo offers a pleasant and serene environment for you to read books. Sign up and become a bibleophile right now!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/resources/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
+</head>
+
+
+<body class="dashboard" onload="startTime()">
+
+    <section id="dashboard">
+        <div class="side-nav">
+            <div class="profile">
+                <div id="time"></div>
+                <img src="/resources/img/avatars/<%= avatar %>.svg" height="75px" alt="">
+                <h4>
+                    <%= username %>
+                </h4>
+            </div>
+            <ul class="contents">
+                <a href="/dashboard/favourites">
+                    <li>
+                        <ion-icon name="star-outline"></ion-icon>
+                        <div class="icon-text">Favourites</div>
+                    </li>
+                </a>
+                <a href="/dashboard/to-read">
+                    <li>
+                        <ion-icon name="stopwatch-outline"></ion-icon>
+                        <div class="icon-text">To Read</div>
+                    </li>
+                </a>
+                <a href="/dashboard/have-read">
+                    <li>
+                        <ion-icon name="file-tray-stacked-outline"></ion-icon>
+                        <div class="icon-text">Have Read</div>
+                    </li>
+                </a>
+                <a href="/dashboard/reading-now">
+                    <li>
+                        <ion-icon name="book-outline"></ion-icon>
+                        <div class="icon-text">Reading now</div>
+                    </li>
+                </a>
+                <a href="/dashboard/tags">
+                    <li>
+                        <ion-icon name="pricetags-outline"></ion-icon>
+                        <div class="icon-text">Tags</div>
+                    </li>
+                </a>
+                <a href="/profile/<%= username %>">
+                    <li class="active">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <div class="icon-text">My Profile</div>
+                    </li>
+                </a>
+            </ul>
+            <div class="settings">
+                <ul>
+                    <a href="/dashboard/">
                         <li>
-                            <%= email %>
+                            <ion-icon name="library-outline"></ion-icon>
+                            <div class="icon-text">My Library</div>
                         </li>
-                        <% } %>
-                            <% if (instagram !== null && instagram !== '') { %>
-                                <li>
-                                    <%= instagram %>
-                                </li>
-                                <% } %>
-                                    <% if (facebook !== null && facebook !== '') { %>
-                                        <li>
-                                            <%= facebook %>
-                                        </li>
-                                        <% } %>
-                                            <% if (twitter !== null && twitter !== '') { %>
-                                                <li>
-                                                    <%= twitter %>
-                                                </li>
-                                                <% } %>
-                                                    <% if (wattpad !== null && wattpad !== '') { %>
-                                                        <li>
-                                                            <%= wattpad %>
-                                                        </li>
-                                                        <% } %>
-</ul>
+                    </a>
+                    <a href="/my-account">
+                        <li>
+                            <ion-icon name="settings-outline"></ion-icon>
+                            <div class="icon-text">Settings</div>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="logo">
+                <img src="../../resources/img/bibleo-svg.png" height="100px" alt="">
+            </div>
+            <div class="self">
+                <img class="profile-img" src="../../resources/img/avatars/<%= avatar %>.svg" height="100px" alt="">
+                <div class="user-info">
+                    <h3>
+                        Profile Information
+                    </h3>
+                </div>                
+            </div>
+            <!-- Tab Buttons -->
+            <div class="info">
+                <div class="tab" id="myTabContent">
+                    <button class="tablinks" onclick="openCity(event, 'account')" id="defaultOpen"> <ion-icon name="construct-outline"></ion-icon> Account Information</button>
+                    <button class="tablinks" onclick="openCity(event, 'social')"> <ion-icon name="globe-outline"></ion-icon> Social Links</button>
+                </div>
+                            
+                <!-- Tab content -->
+                <div id="account" class="tabcontent">
+                    <table class="table-profile">
+                        <tbody>
+                            <tr>
+                                <td>First Name</td>
+                                <td><a><%= first_name %></a></td>
+                            </tr>
+                            <tr>
+                                <td>Last Name</td>
+                                <td><a><%= last_name %></a></td>
+                            </tr>
+                            <tr>
+                                <td><span>Username</span></td>
+                                <td><a><%= username %></a></td>
+                            </tr>
+                            <tr>
+                                <td><span>Email</span></td>
+                                <td><a><%= email %></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div id="social" class="tabcontent">
+                    <table class="table-profile-social">
+                        <tbody>
+                            <tr>
+                                <td>Instagram</td>
+                                <td><a href="<%= instagram %>"><%= instagram %></a></td>
+                            </tr>
+                            <tr>
+                                <td>Facebook</td>
+                                <td><a href="<%= facebook %>"><%= facebook %></a></td>
+                            </tr>
+                            <tr>
+                                <td><span>Twitter</span></td>
+                                <td><a href="<%= twitter %>"><%= twitter %></a></td>
+                            </tr>
+                            <tr>
+                                <td><span>Wattpad</span></td>
+                                <td><a href="<%= wattpad %>"><%= wattpad %></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+<script type="text/javascript">
+
+    document.getElementById("defaultOpen").click();
+
+    function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
+
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+<script src="/resources/script.js"></script>
+</body>
+
+</html>
