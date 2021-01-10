@@ -16,7 +16,7 @@ This project is focused on building an online personal bookshelf for the communi
 ## 💻 Project Development:
   - Backend: [Node, Express, Mongo DB]
   - Frontend: [EJS, CSS, JS]
-  - Development Duration: 30.06.2020 - live
+  - Development Duration: 30.06.2020 - 15.10.2020 (not continuous) 
   - Acknowledgement: Traversy Media, Dev Ed from YT
 
 ## 📜 Usage
