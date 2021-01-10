@@ -3,7 +3,7 @@
 <br />
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <img alt="Maintenance" src="https://img.shields.io/badge/Maintained-yes-blue.svg" />
+  <img alt="Maintenance" src="https://img.shields.io/badge/Maintained-no-blue.svg" />
   <a href="https://github.com/singhayushh/project_Bookmarks/blob/master/LICENSE" target="_blank">
     <img alt="Licence" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" />
   </a>
