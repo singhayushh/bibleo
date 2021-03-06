@@ -1,30 +1,25 @@
 <h1 align="center">Welcome to Bibleo! 👋</h1>
-<p align="center">A personal space online for storing and reading books</p>
+<p align="center">A minimalist bookshelf on the web!</p>
 <br />
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <img alt="Maintenance" src="https://img.shields.io/badge/Maintained-no-blue.svg" />
-  <a href="https://github.com/singhayushh/project_Bookmarks/blob/master/LICENSE" target="_blank">
-    <img alt="Licence" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" />
-  </a>
-</p>
 
-## ❓ What is this project about?
+## What is this project about?
 
-This project is focused on building an online personal bookshelf for the community to make reading a bit more elegant. I am using the free mongo cluster, so it isn't possible to store entire books online. Therefore, the users will have to upload the files as pdf in drive / dropbox and link them in or use the project entirely to store bookmarks!
+_How do you manage your e-books?_ <br/>
+The main idea of this project is to build a minimalist virtual bookshelf for managing and keeping all your e-books at one place. The project is as minimal from inside as it is from outside with very minimal features that keeps you focused.
 
-## 💻 Project Development:
+> The project is a working prototype of this main idea and I've tried to include all the important features revolving around the main idea.
+
+## Project Development:
   - Backend: [Node, Express, Mongo DB]
   - Frontend: [EJS, CSS, JS]
-  - Development Duration: 30.06.2020 - 15.10.2020 (not continuous) 
   - Acknowledgement: Traversy Media, Dev Ed from YT
 
-## 📜 Usage
+## Usage
 - Create a free mongoDB cluster and connect to the project using the connection string.
 - *Go through the [how-to-run.md](https://github.com/singhayushh/project_Bookmarks/blob/master/how-to-run.md) for details.*
 
 
-## 📸 Screenshots
+## Screenshots
 
 * Dashboard
 
@@ -43,13 +38,4 @@ This project is focused on building an online personal bookshelf for the communi
 
 ![Login](./views/resources/img/login-screen.png)
 
-## 🤝 Contributing
-Comments and improvements are more than welcome!
-
-Feel free to fork and open a pull request. [contribution guidelines](https://github.com/singhayushh/project_Bookmarks/blob/master/contributing.md)
-
-## 🙌 Show your support
-
-Give a ⭐️ if you liked this!
-
-<hr>
+----------
