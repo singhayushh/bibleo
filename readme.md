@@ -4,15 +4,13 @@
 
 ## What is this project about?
 
-_How do you manage your e-books?_ <br/><br />
-The main idea of this project is to build a minimalist virtual bookshelf for managing and keeping all your e-books at one place. The project is as minimal from inside as it is from outside with very minimal features that keeps you focused.
+Bibleo is a platform to create and save e-book metadata, thereby creating a personal bookshelf on the web, accessible everywhere and anywhere on the go.
 
-> The project is a working prototype of this main idea and I've tried to include all the important features revolving around the main idea.
+This project was built primarily to explore NodeJS, MongoDB and RESTful APIs.
 
 ## Project Development:
   - Backend: [Node, Express, Mongo DB]
   - Frontend: [EJS, CSS, JS]
-  - Acknowledgement: Traversy Media, Dev Ed from YT
 
 ## Usage
 - Create a free mongoDB cluster and connect to the project using the connection string. - [Here's my gist on how to](https://gist.github.com/singhayushh/426f10353a8051593828e92c139ebdbc)

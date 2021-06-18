@@ -5,7 +5,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 var cookieParser = require('cookie-parser');
-require('dotenv').config(); // Aryan ask for the .env file if you have read this.
+require('dotenv').config();
 
 
 /* ----------------- Basic Server Config ---------------- */

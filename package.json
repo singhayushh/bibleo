@@ -1,7 +1,7 @@
 {
     "name": "bibleo",
-    "version": "1.0.0",
-    "description": "Personalised Online Library",
+    "version": "2.0.0",
+    "description": "Virtual bookshelf to store e-books metadata",
     "main": "server.js",
     "dependencies": {
         "cookie-parser": "^1.4.5",
@@ -23,12 +23,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/singhayushh/_library.git"
+        "url": "git+https://github.com/singhayushh/bibleo.git"
     },
     "author": "Ayush Singh",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/singhayushh/_library/issues"
+        "url": "https://github.com/singhayushh/bibleo/issues"
     },
-    "homepage": "https://github.com/singhayushh/_library#readme"
+    "homepage": "https://github.com/singhayushh/bibleo#readme"
 }
