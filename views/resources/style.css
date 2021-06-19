@@ -94,7 +94,8 @@ section {
 .container {
     height: 100%;
     width: 50%;
-    display: inline-block;
+    position: relative;
+    float: left;
     display: flex;
     flex-direction: column;
     align-items: center;
