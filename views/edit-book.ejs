@@ -84,17 +84,17 @@
                 <div class="div">
                     <span>Book Name</span>
                     <label for="book_name"></label>
-                    <input type="name" id="book_name" name="book_name" class="form-control" placeholder="eg. Pride and Prejudice" value="<%= typeof book_name != 'undefined' ? book_name : '' %>" />
+                    <input type="name" id="book_name" name="book_name" class="form-control" placeholder="eg. Pride and Prejudice" value="<%= typeof book_name != 'undefined' ? book_name : '' %>" required/>
                 </div>
                 <div class="div">
                     <span>Author</span>
                     <label for="author"></label>
-                    <input type="name" id="author" name="author" class="form-control" placeholder="eg. Robert Frost" value="<%= typeof author != 'undefined' ? author : '' %>" />
+                    <input type="name" id="author" name="author" class="form-control" placeholder="eg. Robert Frost" value="<%= typeof author != 'undefined' ? author : '' %>" required/>
                 </div>
                 <div class="div">
                     <span>Source</span>
                     <label for="book_link"></label>
-                    <input type="book_link" id="book_link" name="book_link" class="form-control" placeholder="eg. https://www.drive.google.com.file/.." value="<%= typeof book_link != 'undefined' ? book_link: '' %>" />
+                    <input type="book_link" id="book_link" name="book_link" class="form-control" placeholder="eg. https://www.drive.google.com.file/.." value="<%= typeof book_link != 'undefined' ? book_link: '' %>" required/>
                 </div>
                 <div class="div">
                     <span>Book Cover Link</span>

@@ -94,17 +94,17 @@
                         <div class="input">
                             <span>Name of the book</span><br>
                             <label for="book_name"></label>
-                            <input type="name" id="book_name" name="book_name" class="form-control" placeholder="eg. To Kill A Mocking Bird" value="<%= typeof book_name != 'undefined' ? book_name : '' %>" />
+                            <input type="name" id="book_name" name="book_name" class="form-control" placeholder="eg. To Kill A Mocking Bird" value="<%= typeof book_name != 'undefined' ? book_name : '' %>" required/>
                         </div>
                         <div class="input">
                             <span>Author(s)</span><br>
                             <label for="author"></label>
-                            <input type="name" id="author" name="author" class="form-control" placeholder="eg. Harper Lee" value="<%= typeof author != 'undefined' ? author : '' %>" />
+                            <input type="name" id="author" name="author" class="form-control" placeholder="eg. Harper Lee" value="<%= typeof author != 'undefined' ? author : '' %>" required/>
                         </div>
                         <div class="input">
                             <span>Link to the book</span><br>
                             <label for="book_link"></label>
-                            <input type="link" id="book_link" name="book_link" class="form-control" placeholder="eg. https://drive.google.com/file/..." value="<%= typeof book_cover != 'undefined' ? book_cover: '' %>" />
+                            <input type="link" id="book_link" name="book_link" class="form-control" placeholder="eg. https://drive.google.com/file/..." value="<%= typeof book_cover != 'undefined' ? book_cover: '' %>" required/>
                         </div>
                         <div class="input">
                             <span>Book Cover Link (Optional)</span><br>

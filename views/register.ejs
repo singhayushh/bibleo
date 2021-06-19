@@ -32,12 +32,12 @@
                 <!--<%= typeof name != 'undefined' ? name : '' %>-->
                 <div class="form-group">
                     <label for="username"></label>
-                    <input type="name" id="username" name="username" class="form-control" placeholder="Enter a username" value="<%= typeof name != 'undefined' ? name : '' %>" />
+                    <input type="name" id="username" name="username" class="form-control" placeholder="Enter a username" value="<%= typeof name != 'undefined' ? name : '' %>" required/>
                 </div>
                 <!--<%= typeof password != 'undefined' ? password : '' %>-->
                 <div class="form-group">
                     <label for="password"></label>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" value="<%= typeof password != 'undefined' ? password : '' %>" />
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" value="<%= typeof password != 'undefined' ? password : '' %>" required/>
                 </div>
                 <button type="submit" class="btn ">Sign up</button>
 
