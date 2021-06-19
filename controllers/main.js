@@ -16,7 +16,7 @@ const RenderDashboard = async (req, res) => {
                 {
                     $match: {
                         have_read: false,
-                        user_id: user._id,
+                        user_id: String(user._id),
                     }
                 }
             ]);
@@ -38,7 +38,7 @@ const RenderFavourites = async (req, res) => {
             const books = await Book.aggregate([{
                 $match: {
                     favourite: true,
-                    user_id: user._id,
+                    user_id: String(user._id),
                 }
             }]);
             res.render('dashboard', { title: "Favourites", username: user.username, avatar: user.avatar, books, self: true });
@@ -59,7 +59,7 @@ const RenderHaveRead = async (req, res) => {
             const books = await Book.aggregate([{
                 $match: {
                     have_read: true,
-                    user_id: user._id,
+                    user_id: String(user._id),
                 }
             }]);
             res.render('dashboard', { title: "Have Read", username: user.username, avatar: user.avatar, books, self: true });
@@ -80,7 +80,7 @@ const RenderToRead = async(req, res) => {
             const books = await Book.aggregate([{
                     $match: {
                         have_read: false,
-                        user_id: user._id,
+                        user_id: String(user._id),
                     }
             }]);
             res.render('dashboard', { title: "To Read", username: user.username, avatar: user.avatar, books, self: true });
@@ -101,7 +101,7 @@ const RenderReadingNow = async(req, res) => {
             const books = await Book.aggregate([{
                 $match: {
                     reading_now: true,
-                    user_id: user._id,
+                    user_id: String(user._id),
                 }
             }]);
             res.render('dashboard', { title: "Reading Now", username: user.username, avatar: user.avatar, books, self: true });
@@ -270,7 +270,7 @@ const AddBook = async(req, res) => {
         } else {
             let cover = 'default';
             if (req.body.book_cover) cover = req.body.book_cover;
-            const newBook = new Book({ name: req.body.book_name, author: req.body.author, link: req.body.book_link, cover: cover, user_id: user._id });
+            const newBook = new Book({ name: req.body.book_name, author: req.body.author, link: req.body.book_link, cover: cover, user_id: String(user._id) });
             await newBook.save();
             res.redirect('/dashboard');
         }
@@ -289,7 +289,7 @@ const DeleteBook = async (req, res) => {
             res.redirect('/users/login');
         } else {
             const book_id = req.body.book_id;
-            await Book.deleteOne({ _id: book_id, user_id: user._id });
+            await Book.deleteOne({ _id: book_id, user_id: String(user._id) });
             res.redirect('/dashboard');
         }
     } catch (err) {
@@ -305,7 +305,7 @@ const RenderEditBook = async(req, res) => {
         if (!user || !sessionToken) {
             res.redirect('/users/login');
         } else {
-            const book = await Book.findOne({_id: book_id, user_id: user._id})
+            const book = await Book.findOne({_id: book_id, user_id: String(user._id)})
             res.render('edit-book', {
                 book_id: book._id,
                 book_name: book.name,
@@ -333,7 +333,7 @@ const EditBook = async (req, res) => {
             res.redirect('/users/login');
         } else {
             const book_id = req.body.book_id;
-            let book = await Book.findOne({ _id: book_id, user_id: user._id });
+            let book = await Book.findOne({ _id: book_id, user_id: String(user._id) });
             book.name = req.body.book_name;
             book.author = req.body.author;
             book.link = req.body.book_link;
