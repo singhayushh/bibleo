@@ -20,7 +20,7 @@ const RenderDashboard = async (req, res) => {
                     }
                 }
             ]);
-            res.render('dashboard', { title: "My Library", username: user.username, avatar: user.avatar, books });
+            res.render('dashboard', { title: "My Library", username: user.username, avatar: user.avatar, books, self: true });
         }
     } catch (err) {
         res.status(500).json(err);
@@ -41,7 +41,7 @@ const RenderFavourites = async (req, res) => {
                     user_id: user._id,
                 }
             }]);
-            res.render('dashboard', { title: "Favourites", username: user.username, avatar: user.avatar, books });
+            res.render('dashboard', { title: "Favourites", username: user.username, avatar: user.avatar, books, self: true });
         }
     } catch (err) {
         res.status(500).json(err);
@@ -62,7 +62,7 @@ const RenderHaveRead = async (req, res) => {
                     user_id: user._id,
                 }
             }]);
-            res.render('dashboard', { title: "Have Read", username: user.username, avatar: user.avatar, books });
+            res.render('dashboard', { title: "Have Read", username: user.username, avatar: user.avatar, books, self: true });
         }    
     } catch (err) {
         res.status(500).json(err);
@@ -83,7 +83,7 @@ const RenderToRead = async(req, res) => {
                         user_id: user._id,
                     }
             }]);
-            res.render('dashboard', { title: "To Read", username: user.username, avatar: user.avatar, books });
+            res.render('dashboard', { title: "To Read", username: user.username, avatar: user.avatar, books, self: true });
         }     
     } catch (err) {
         res.status(500).json(err);
@@ -104,7 +104,7 @@ const RenderReadingNow = async(req, res) => {
                     user_id: user._id,
                 }
             }]);
-            res.render('dashboard', { title: "Reading Now", username: user.username, avatar: user.avatar, books });
+            res.render('dashboard', { title: "Reading Now", username: user.username, avatar: user.avatar, books, self: true });
         }    
     } catch (err) {
         res.status(500).json(err);
@@ -161,17 +161,55 @@ const Upload = async(req, res) => {
 
 const RenderProfile = async(req, res) => {
     try {
-        const user = await User.findOne({ username: req.params.username })
-        let first_name = '', last_name = '', full_name = '';
-        if (user.full_name) {
-            full_name = user.full_name.split(" ");    // Fix split by space
-            if (full_name.length > 1) {
-                first_name = full_name[0];
-                last_name = full_name[1];
-            }
+        const sessionToken = await req.cookies.token;
+        let user = await User.findOne({ sessionToken: sessionToken });
+        if (!user || !sessionToken) {
+            res.redirect('/users/login');
         }
-        res.render('profile', {  title: "My Profile", username: user.username, avatar: user.avatar, full_name: user.full_name, first_name: first_name, last_name: last_name, email: user.email, instagram: user.instagram, facebook: user.facebook, twitter: user.twitter, wattpad: user.wattpad });
+        if (user.username == req.params.username) {
+            let first_name = '', last_name = '', full_name = '';
+            if (user.full_name) {
+                full_name = user.full_name.split(" ");    // Fix split by space
+                if (full_name.length > 1) {
+                    first_name = full_name[0];
+                    last_name = full_name[1];
+                }
+            }
+            res.render('profile', {  title: "My Profile", username: user.username, avatar: user.avatar, full_name: user.full_name, first_name: first_name, last_name: last_name, email: user.email, instagram: user.instagram, facebook: user.facebook, twitter: user.twitter, wattpad: user.wattpad, self: true });
+        } else {
+            const view = await User.findOne({ username: req.params.username })
+            let first_name = '', last_name = '', full_name = '';
+            if (view.full_name) {
+                full_name = view.full_name.split(" ");    // Fix split by space
+                if (full_name.length > 1) {
+                    first_name = full_name[0];
+                    last_name = full_name[1];
+                }
+            }
+            res.render('profile', {  title: "My Profile", username: user.username, avatar: user.avatar, viewUsername: view.username, viewAvatar: view.avatar, full_name: view.full_name, first_name: first_name, last_name: last_name, email: view.email, instagram: view.instagram, facebook:view.facebook, twitter: view.twitter, wattpad: view.wattpad, self: false });
+        }
     } catch (err) {
+        console.log(err)
+        res.status(500).json(err);
+    }
+};
+
+const RenderUserBooks = async (req, res) => {
+    try {
+        const sessionToken = await req.cookies.token;
+        let user = await User.findOne({ sessionToken: sessionToken });
+        if (!user || !sessionToken) {
+            res.redirect('/users/login');
+        }
+        if (user.username == req.params.username) {
+            res.redirect('/dashboard');
+        } else {
+            const view = await User.findOne({ username: req.params.username })
+            const books = await Book.find({ user_id: view._id });
+            res.render('dashboard', {  title: `${view.username}'s Books`, username: user.username, avatar: user.avatar, viewUsername: view.username, self: false, books });
+        }
+    } catch (err) {
+        console.log(err)
         res.status(500).json(err);
     }
 };
@@ -324,6 +362,7 @@ module.exports = {
     RenderEditAvatar,
     RenderEditBook,
     RenderProfile,
+    RenderUserBooks,
     RenderReadingNow,
     Logout,
     AddBook,

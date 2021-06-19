@@ -79,8 +79,16 @@
         <div class="board">
             <div class="preview">
                 <div class="text-box">
-                    <span>“You know you've read a good book when you turn the last page and feel a little as if you have lost a friend.”</span><br><br>
+                    <span>
+                        <% if (!self) { %> 
+                            <%= viewUsername %>'s Library
+                        <% } else { %>
+                        “You know you've read a good book when you turn the last page and feel a little as if you have lost a friend.”
+                        <% } %>
+                    </span><br><br>
+                    <% if (self) { %> 
                     <div class="auth">~ Paul Sweeney</div>
+                    <% } %>
                 </div>
                 <img src="/resources/img/book2.svg" alt="">
             </div>
@@ -131,6 +139,7 @@
                             <li class="book">
                                 <p class="image" style="display: none"><%= book.cover %> </p>
                                 <a class="book-link" href="<%= book.link %>" target="_blank">
+                                    <% if (self) { %>
                                     <div class="book-overlay">
                                         <div class="toolbar">
 
@@ -152,12 +161,11 @@
 
                                         </div>
                                     </div>
+                                    <% } %>
                                 </a>
                             </li>
-                            <%
-                          }) %>
-                                <%
-                      } %>
+                            <% }) %>
+                    <% } %>
                     <li class="book add">
                         <div class="add-btn">
                             Add

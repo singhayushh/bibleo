@@ -19,6 +19,8 @@ router.post('/upload', m.Upload);
 
 router.get('/profile/:username', m.RenderProfile);
 
+router.get('/books/:username', m.RenderUserBooks);
+
 router.get('/change-avatar', m.RenderEditAvatar);
 
 router.post('/change-avatar', m.EditAvatar);

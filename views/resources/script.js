@@ -64,7 +64,7 @@ $(window).on("load", function() {
     if ($pic.length === 1 && $pic[0] === "") return;
     for(var $i = 0; $i < $pic.length; $i++) {
         if ($pic[$i] === "default") {
-            $pic[$i] = `./resources/img/book-cover/default.png`
+            $pic[$i] = `/resources/img/book-cover/default.png`
         }
         try {
             $(`li:nth-child(${$i + 1}) a`).css({"background-image": `url(${$pic[$i].toString()})`, "background-size": "100% 100%", "height": "100%", "width": "100%"});

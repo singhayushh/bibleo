@@ -79,15 +79,23 @@
 
         <div class="main">
             <div class="logo">
-                <img src="../../resources/img/bibleo-svg.png" height="100px" alt="">
+                <img src=".././resources/img/bibleo-svg.png" height="100px" alt="">
             </div>
             <div class="self">
-                <img class="profile-img" src="../../resources/img/avatars/<%= avatar %>.svg" height="100px" alt="">
+                <% if (self) { %>
+                    <img class="profile-img" src=".././resources/img/avatars/<%= avatar %>.svg" height="100px" alt="">
+                <% } else { %>
+                    <img class="profile-img" src=".././resources/img/avatars/<%= viewAvatar %>.svg" height="100px" alt="">
+                <% } %>
                 <div class="user-info">
                     <h3>
                         Profile Information
                     </h3>
-                    <a href="/my-account">Edit Profile</a>
+                    <% if (self) { %>
+                        <a href="/my-account">Edit Profile</a>
+                    <% } else { %>
+                        <a href="/books/<%= viewUsername %>">View books</a>
+                    <% } %>
                 </div>                
             </div>
             <!-- Tab Buttons -->
