@@ -13,6 +13,10 @@
 
 <body id="stn" onload="startTime()">
 
+    <div class="mnu">
+        <div class="menu-btn hero">Menu</div>
+    </div>
+
     <div class="side-nav">
         <div class="profile">
             <div id="time"></div>
@@ -52,6 +56,12 @@
                     <div class="icon-text">Tags</div>
                 </li>
             </a>
+            <a href="/profile/<%= username %>">
+                <li>
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                    <div class="icon-text">My Profile</div>
+                </li>
+            </a>
         </ul>
         <div class="settings">
             <ul>
@@ -59,12 +69,6 @@
                     <li class="active">
                         <ion-icon name="library-outline"></ion-icon>
                         <div class="icon-text">My Library</div>
-                    </li>
-                </a>
-                <a href="/my-account">
-                    <li>
-                        <ion-icon name="settings-outline"></ion-icon>
-                        <div class="icon-text">Settings</div>
                     </li>
                 </a>
             </ul>

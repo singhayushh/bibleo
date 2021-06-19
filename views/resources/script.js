@@ -88,3 +88,23 @@ $("input:checkbox").on('click', function() {
       $box.prop("checked", false);
     }
   });
+
+
+    // Toggle Dropdown
+    $('.menu-btn').click(
+    function () {
+        if ($('.side-nav').css('left') < '0px') {
+            $('.side-nav').css({
+                'top': '0',
+                'left': '0',
+            });
+            $('.menu-btn').html('Close')
+        } else {
+            $('.side-nav').css({
+                'top': '0',
+                'left': '-100%',
+            });
+            $('.menu-btn').html('Menu')
+        }
+    }
+)

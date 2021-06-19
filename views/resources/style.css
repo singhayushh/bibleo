@@ -95,7 +95,6 @@ section {
     height: 100%;
     width: 50%;
     display: inline-block;
-    float: left;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -369,6 +368,9 @@ footer ul li a ion-icon {
     .about-text {
         font-size: 18px;
     }
+    .text-box span {
+        font-size: 24px !important;
+    }
 }
 
 @media only screen and (max-width: 1080px) {
@@ -430,6 +432,9 @@ footer ul li a ion-icon {
         width: 100%;
         order: 2;
     }
+    .preview img {
+        display: none !important;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -455,9 +460,18 @@ footer ul li a ion-icon {
         background-attachment: fixed;
     }
     .text-box {
-        font-size: 28px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    #home .text-box {
+        padding: 0 12px;
+        text-align: center !important;
+        color: #fff !important;
+    }
+    .text-box span {
+        font-size: 22px !important;
         font-weight: 300;
-        color: #f6f8fb;
     }
     .auth {
         font-size: 18px;
@@ -510,6 +524,36 @@ footer ul li a ion-icon {
     .text ul li {
         font-size: 14px;
         margin: 7px;
+    }
+    .side-nav {
+        transition: all 0.4s;
+        z-index: 998;
+        left: -100%;
+    }
+    .side-nav{
+        width: 100% !important;
+        padding-top: 4rem !important;
+    }
+    .board, .main {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 30px 15px !important;
+    }
+    .self, .preview {
+        width: 100% !important;
+    }
+    .mnu {
+        display: block !important;
+    }
+    .tab button {
+        font-size: 12px !important;
+    }
+    .tabcontent, .table-profile {
+        padding: 0 !important;
+        font-size: 14px;
+    }
+    tr {
+        text-align: center;
     }
 }
 
@@ -593,7 +637,7 @@ form button {
 }
 
 .side-nav {
-    height: 100%;
+    min-height: 100vh;
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -662,6 +706,7 @@ form button {
     border-radius: 22px;
     font-size: 16px;
     color: #434f71b9;
+    transition: all 0.4s;
 }
 
 .side-nav ul li {
@@ -673,11 +718,12 @@ form button {
     -webkit-box-shadow: 0px 8px 17px -6px rgba(101, 117, 164, 1);
     -moz-box-shadow: 0px 8px 17px -6px rgba(101, 117, 164, 1);
     box-shadow: 0px 8px 17px -6px rgba(101, 117, 164, 1);
-    transition-delay: 30ms;
 }
 
 .settings ul li:hover {
-    font-weight: 600;
+    -webkit-box-shadow: 0px 8px 17px -6px rgba(101, 117, 164, 1);
+    -moz-box-shadow: 0px 8px 17px -6px rgba(101, 117, 164, 1);
+    box-shadow: 0px 8px 17px -6px rgba(101, 117, 164, 1);
 }
 
 .side-nav ul li ion-icon {
@@ -1171,7 +1217,8 @@ button:hover {
 /************** Profile Page ******************/
 
 .info{
-    width: 700px;
+    max-width: 700px;
+    width: 100%;
     height: auto;
 }
 
@@ -1225,7 +1272,8 @@ button:hover {
 
 .table-profile{
     padding: 20px;
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
 }
 
 .table-profile-social{
@@ -1242,4 +1290,19 @@ button:hover {
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+.menu-btn {
+    width: max-content;
+    padding: 15px 30px;
+    border: 1px solid #6575a4;
+    border-radius: 10px;
+}
+
+.mnu {
+    position: relative;
+    z-index: 999;
+    display: none;
+    width: 100%;
+    padding: 12px;
 }
